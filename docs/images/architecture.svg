@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="700" viewBox="0 0 960 700" role="img" aria-labelledby="title desc">
+  <title id="title">Edge Visual Inspection 系统架构</title>
+  <desc id="desc">左侧为离线数据划分、模型训练与模型清单；右侧为在线回放、预处理、ORT CUDA 或 TensorRT INT8 推理、后处理与事件记录。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52718b"/>
+    </marker>
+    <style>
+      text { font-family: system-ui, 'Segoe UI', 'Microsoft YaHei', sans-serif; }
+      .heading { font-size: 23px; font-weight: 700; fill: #142d46; }
+      .label { font-size: 20px; font-weight: 600; fill: #142d46; }
+      .detail { font-size: 16px; fill: #4d647c; }
+      .flow { fill: none; stroke: #52718b; stroke-width: 2.4; marker-end: url(#arrow); }
+      .box { fill: #fff; stroke: #afc8df; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <rect width="960" height="700" rx="16" fill="#fff"/>
+  <rect x="16" y="16" width="300" height="668" rx="16" fill="#f0f6fc" stroke="#d8e4ef"/>
+  <rect x="340" y="16" width="604" height="668" rx="16" fill="#f1faf7" stroke="#d3e8df"/>
+  <text x="166" y="60" text-anchor="middle" class="heading">离线 · Python</text>
+  <text x="642" y="60" text-anchor="middle" class="heading">在线 · C++17</text>
+
+  <rect x="40" y="96" width="252" height="90" rx="12" class="box"/>
+  <text x="166" y="133" text-anchor="middle" class="label">固定数据划分</text>
+  <text x="166" y="162" text-anchor="middle" class="detail">训练 / 校准 / 验证 / 测试</text>
+  <path d="M 166 186 V 232" class="flow"/>
+  <rect x="40" y="234" width="252" height="100" rx="12" class="box"/>
+  <text x="166" y="273" text-anchor="middle" class="label">EfficientAD-S</text>
+  <text x="166" y="305" text-anchor="middle" class="detail">训练 → ONNX 导出与对齐</text>
+  <path d="M 166 334 V 379" class="flow"/>
+  <rect x="40" y="382" width="252" height="106" rx="12" class="box"/>
+  <text x="166" y="422" text-anchor="middle" class="label">阈值校准与量化</text>
+  <text x="166" y="454" text-anchor="middle" class="detail">模型清单 / SHA-256 证据</text>
+  <text x="48" y="548" class="detail">模型与引擎进入在线链路前，</text>
+  <text x="48" y="576" class="detail">核验输入输出契约与 hash。</text>
+  <text x="48" y="628" class="detail">Qt 工作台负责启动检测，</text>
+  <text x="48" y="656" class="detail">并读取事件、摘要和热图。</text>
+
+  <rect x="376" y="96" width="532" height="72" rx="12" class="box"/>
+  <text x="642" y="125" text-anchor="middle" class="label">图片目录 / JSON 回放</text>
+  <text x="642" y="153" text-anchor="middle" class="detail">定时调度 → 有界帧队列</text>
+  <path d="M 642 168 V 204" class="flow"/>
+  <rect x="376" y="206" width="532" height="72" rx="12" class="box"/>
+  <text x="642" y="236" text-anchor="middle" class="label">OpenCV 解码与预处理</text>
+  <text x="642" y="263" text-anchor="middle" class="detail">RGB / NCHW / float32 / 256 × 256</text>
+  <path d="M 642 278 V 296 H 502 V 316" class="flow"/>
+  <path d="M 642 296 H 782 V 316" class="flow"/>
+  <path d="M 292 435 H 326 V 296 H 638" class="flow" stroke-dasharray="6 5"/>
+  <rect x="376" y="318" width="252" height="82" rx="12" class="box"/>
+  <text x="502" y="353" text-anchor="middle" class="label">ONNX Runtime CUDA</text>
+  <text x="502" y="382" text-anchor="middle" class="detail">FP32 主线</text>
+  <rect x="656" y="318" width="252" height="82" rx="12" class="box"/>
+  <text x="782" y="353" text-anchor="middle" class="label">TensorRT INT8</text>
+  <text x="782" y="382" text-anchor="middle" class="detail">直接加载已审计引擎</text>
+  <path d="M 502 400 V 420 H 642 V 440" class="flow"/>
+  <path d="M 782 400 V 420 H 642" fill="none" stroke="#52718b" stroke-width="2.4"/>
+  <rect x="376" y="442" width="532" height="72" rx="12" class="box"/>
+  <text x="642" y="472" text-anchor="middle" class="label">CPU / CUDA 后处理</text>
+  <text x="642" y="499" text-anchor="middle" class="detail">异常图归约 / 非有限值检查</text>
+  <path d="M 642 514 V 552" class="flow"/>
+  <rect x="376" y="554" width="532" height="94" rx="12" class="box"/>
+  <text x="642" y="591" text-anchor="middle" class="label">状态检查 → OK / REVIEW → 事件记录</text>
+  <text x="642" y="624" text-anchor="middle" class="detail">逐帧 JSONL / 运行摘要 / 复检热图</text>
+</svg>

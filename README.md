@@ -13,7 +13,7 @@
 ![Qt](https://img.shields.io/badge/Qt_Widgets-5.15-41CD52?logo=qt&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-Windows_x64-0078D4)
 
-[快速开始](#快速开始) · [系统架构](#系统架构) · [实测结果](#实测结果) · [文档导航](#文档导航)
+[真实检测](#真实检测示例) · [快速开始](#快速开始) · [系统架构](#系统架构) · [实测结果](#实测结果) · [文档导航](#文档导航)
 
 </div>
 
@@ -22,6 +22,30 @@
 面向 **MVTec AD `metal_nut` 单工位场景**的研究原型。Python 负责离线训练、导出和量化分析；C++17 独立完成在线检测，支持 ONNX Runtime CUDA 与直接 TensorRT INT8 推理，并提供可选的 Qt 桌面界面。
 
 项目关注模型进入在线系统后的工程问题：输入输出契约、GPU 实际执行、量化精度审计、排队与超时、逐帧事件记录，以及质量和性能结果的可追溯性。当前整体质量验收为 **`partial`**，具体限制见[独立验收](docs/ACCEPTANCE.md)。
+
+## 真实检测示例
+
+![真实金属螺母划痕检测：原图、模型异常图和热图叠加](reports/real-detection.png)
+
+从左到右为**真实输入图像、模型输出的异常热图、热图叠加效果**。样本来自 MVTec AD `metal_nut / scratch / 011.png`，使用 EfficientAD-S 模型，由 C++ TensorRT INT8 后端检测：图像分数 **0.733793**，阈值 **0.456021**，决策为 **`REVIEW`（转人工复检）**。
+
+该图取自已有的验证集运行 `trt-cpp-validation` 第 33 帧，原图、原始异常图、分数及模型身份均与审计记录核对；它是验证集示例。热图按单图数值范围着色，用于可视化，未设置像素分割阈值。详见[图片来源与事件记录](reports/real-detection.json)、[验证集审计](reports/trt-cpp-validation-quality.json)和[数据来源说明](data/README.md)。
+
+<details>
+<summary>复现这张检测对照图</summary>
+
+准备已有的验证集运行产物，在包含 Matplotlib 的训练环境中执行：
+
+```powershell
+.\.venv-train\Scripts\python.exe tools/render_detection_example.py `
+    --run runs/trt-cpp-validation `
+    --frame-id 33 `
+    --output reports/real-detection.png
+```
+
+脚本读取实际的 C++ 原始异常图和热图，核验数据 hash、审计记录与事件分数后排版输出。
+
+</details>
 
 ## 界面预览
 
@@ -52,31 +76,9 @@
 
 ## 系统架构
 
-```mermaid
-flowchart LR
-    subgraph Offline[离线 · Python]
-        D[固定数据划分] --> T[EfficientAD-S 训练]
-        T --> E[ONNX 导出与数值对齐]
-        E --> Q[阈值校准与量化实验]
-        Q --> M[模型清单与 hash 证据]
-    end
+![离线 Python 与在线 C++17 推理架构](docs/images/architecture.svg)
 
-    subgraph Online[在线 · C++17]
-        S[图片目录 / JSON 回放] --> A[定时调度与有界队列]
-        A --> P[OpenCV 解码与预处理]
-        P --> B{推理后端}
-        B --> O[ONNX Runtime CUDA]
-        B --> R[TensorRT INT8]
-        O --> C[CPU / CUDA 后处理]
-        R --> C
-        C --> J[状态检查与 OK / REVIEW]
-        J --> W[事件 JSONL / 摘要 / 热图]
-    end
-
-    M -. 模型与引擎校验 .-> B
-    G[Qt 桌面工作台] --> S
-    W --> G
-```
+架构图以 SVG 展示，可[打开原图](docs/images/architecture.svg)放大查看。
 
 输入契约为 RGB、`float32`、NCHW、`[1,3,256,256]`，范围 `[0,1]`；输出为 `[1,1,256,256]` 原始异常图。图像分数取异常图最大值，**不是概率**。仅当运行成功、分数有限且低于模型阈值时输出 `OK`，其他情况进入 `REVIEW`。
 
@@ -142,7 +144,11 @@ C++ 运行还需可发现的 CUDA / cuDNN DLL；若使用不同目录，请按[�
 
 # 每次使用新的运行目录
 $run = 'runs/demo-' + (Get-Date -Format 'yyyyMMdd-HHmmss')
-.\scripts\run_windows.ps1 run --manifest tests/fixtures/conv/model_manifest.json --source tests/fixtures/conv/replay.json --backend ort-cuda --postprocess cuda --fps 20 --deadline-ms 1000 --output $run
+.\scripts\run_windows.ps1 run `
+    --manifest tests/fixtures/conv/model_manifest.json `
+    --source tests/fixtures/conv/replay.json `
+    --backend ort-cuda --postprocess cuda `
+    --fps 20 --deadline-ms 1000 --output $run
 
 Get-Content "$run/summary.json" -Encoding UTF8
 ```
@@ -155,7 +161,11 @@ Get-Content "$run/summary.json" -Encoding UTF8
 
 ```powershell
 $run = 'runs/fp32-' + (Get-Date -Format 'yyyyMMdd-HHmmss')
-.\scripts\run_windows.ps1 run --manifest artifacts/metal_nut/fp32/model_manifest.json --source data/replay.json --backend ort-cuda --postprocess cuda --fps 20 --output $run
+.\scripts\run_windows.ps1 run `
+    --manifest artifacts/metal_nut/fp32/model_manifest.json `
+    --source data/replay.json `
+    --backend ort-cuda --postprocess cuda `
+    --fps 20 --output $run
 ```
 
 TensorRT INT8 路线还需要构建引擎并生成匹配的审计证据；程序会核验模型、引擎和证据 hash。具体命令见[完整实验复现](docs/REPRODUCIBILITY.md)。请在独立工作副本重跑正式训练与最终测试，保留已有冻结记录。
@@ -190,7 +200,8 @@ TensorRT INT8 路线还需要构建引擎并生成匹配的审计证据；程序
 .\.venv-tools\Scripts\python.exe -m pytest -q tests/test_offline.py -k 'not actual_split'
 
 # 校验刚才生成的运行事件
-.\.venv-tools\Scripts\python.exe tools/validate_run.py --run $run --output reports/demo-validation.json
+.\.venv-tools\Scripts\python.exe tools/validate_run.py `
+    --run $run --output reports/demo-validation.json
 ```
 
 `scripts/build_windows.ps1` 同时执行 C++ 核心和 CUDA 参考测试。完整 Python 测试还会检查真实数据划分；生成本地数据清单后可移除上述 `-k` 条件运行。更多集成验证命令见[使用手册](docs/USER_GUIDE.md)。
