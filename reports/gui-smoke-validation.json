@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "run": "runs/gui-smoke-20261003-155740-046",
+  "event_count": 100,
+  "statuses": {
+    "UNCALIBRATED": 100
+  },
+  "decisions": {
+    "REVIEW": 100
+  },
+  "events_sha256": "d529641845afb6446b49d4ca51deec5fca6ef7ee9cdf73076949f59e3a2c4db3",
+  "summary_sha256": "3125abcac8ba9267bdf28fe0d484b9b5c3346a354cee592d887b67f9a294cbf0",
+  "schema_sha256": "b9dabd80f15d0423c9429a4966d081a7b0fedff49b9b6da0beb4976e45d6750e",
+  "errors": []
+}

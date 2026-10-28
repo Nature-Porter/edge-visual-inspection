@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "run": "D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\gui-smoke-20261003-171533-883",
+  "event_count": 100,
+  "statuses": {
+    "UNCALIBRATED": 100
+  },
+  "decisions": {
+    "REVIEW": 100
+  },
+  "events_sha256": "a65dfbf6cc63ae17acb0e4876ab900867a02b178af9c5308082528c13789671c",
+  "summary_sha256": "666c54681157495ffa7a41062f805cc6eb7acf4298af8dc5e8b1971863091d7c",
+  "schema_sha256": "b9dabd80f15d0423c9429a4966d081a7b0fedff49b9b6da0beb4976e45d6750e",
+  "errors": []
+}

@@ -1,0 +1,177 @@
+{
+  "backend": "TensorRT trtexec 10.9.0",
+  "mode": "engine_gpu_compute_only",
+  "input_sha256": "f0c81d52a0e8f25245b603b0c0f0248b50c592be20afb0501e358cc29d397e28",
+  "iterations_requested": 1000,
+  "warmup_ms_requested": 1000,
+  "rounds": 3,
+  "flags": [
+    "--noDataTransfers",
+    "--avgRuns=1",
+    "--duration=0"
+  ],
+  "candidates": {
+    "fp32": {
+      "model_sha256": "06155c78e0e1ab1dae61b28ab90bb90c19c2454dbc66039943897d6de2595aca",
+      "engine_sha256": "52e60d0c9cce75c1eff743fea0c1848b93654865cf803f1544bd593266690580",
+      "runs": [
+        {
+          "round": 1,
+          "command": [
+            "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+            "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-fp32\\model.engine",
+            "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/input.bin",
+            "--iterations=1000",
+            "--warmUp=1000",
+            "--duration=0",
+            "--avgRuns=1",
+            "--noDataTransfers",
+            "--exportTimes=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-engine-benchmark\\fp32-1\\times.json"
+          ],
+          "times": "runs\\trt-engine-benchmark\\fp32-1\\times.json",
+          "times_sha256": "b53083748ee080738335fa4f80093b79e36670ed1a5687c64aaf3c2fab862a0e",
+          "log": "runs\\trt-engine-benchmark\\fp32-1\\trtexec.log",
+          "log_sha256": "27d885cdd2f611ca6c663ebd65e112ac201d9ea91806837fe088d3616f6f1741",
+          "gpu_compute_ms": {
+            "count": 1000,
+            "p50": 7.935485,
+            "p95": 8.158713,
+            "p99": 8.2760338
+          }
+        },
+        {
+          "round": 2,
+          "command": [
+            "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+            "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-fp32\\model.engine",
+            "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/input.bin",
+            "--iterations=1000",
+            "--warmUp=1000",
+            "--duration=0",
+            "--avgRuns=1",
+            "--noDataTransfers",
+            "--exportTimes=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-engine-benchmark\\fp32-2\\times.json"
+          ],
+          "times": "runs\\trt-engine-benchmark\\fp32-2\\times.json",
+          "times_sha256": "4d1f678fdb078918ee39141c64c220023358b51e15f84634b85f73afccf503cd",
+          "log": "runs\\trt-engine-benchmark\\fp32-2\\trtexec.log",
+          "log_sha256": "e06311d15be37853bc3ef7933e355d27e46d74d5f73e5a927910ed2ccb5b7180",
+          "gpu_compute_ms": {
+            "count": 1000,
+            "p50": 7.93604,
+            "p95": 8.1308845,
+            "p99": 8.3097116
+          }
+        },
+        {
+          "round": 3,
+          "command": [
+            "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+            "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-fp32\\model.engine",
+            "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/input.bin",
+            "--iterations=1000",
+            "--warmUp=1000",
+            "--duration=0",
+            "--avgRuns=1",
+            "--noDataTransfers",
+            "--exportTimes=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-engine-benchmark\\fp32-3\\times.json"
+          ],
+          "times": "runs\\trt-engine-benchmark\\fp32-3\\times.json",
+          "times_sha256": "a183c08908303b7e0d72223c79c78c84a0ef8f5b0d43eb1ac09bbcbabf561833",
+          "log": "runs\\trt-engine-benchmark\\fp32-3\\trtexec.log",
+          "log_sha256": "a90b467bbb8953404176d46604350a6cbdea88865800801f35bd41c0b1e764c0",
+          "gpu_compute_ms": {
+            "count": 1000,
+            "p50": 7.93311,
+            "p95": 8.11523,
+            "p99": 8.340631199999999
+          }
+        }
+      ],
+      "median_round_p50_ms": 7.935485
+    },
+    "int8_selective_2": {
+      "model_sha256": "c82c6dccc5d9d3155d0e836d6b0688937852c222d042b488ef9bd5797c9bb3f4",
+      "engine_sha256": "0c03603cdeace5b091fd180071e739b05a52a3d80ca1b35e2bb213cf735f8763",
+      "runs": [
+        {
+          "round": 1,
+          "command": [
+            "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+            "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+            "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/input.bin",
+            "--iterations=1000",
+            "--warmUp=1000",
+            "--duration=0",
+            "--avgRuns=1",
+            "--noDataTransfers",
+            "--exportTimes=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-engine-benchmark\\int8_selective_2-1\\times.json"
+          ],
+          "times": "runs\\trt-engine-benchmark\\int8_selective_2-1\\times.json",
+          "times_sha256": "fce8c35e5517139fa1ff8f9365f3f8ebbd4140cdd8376c51d580d885f5039e67",
+          "log": "runs\\trt-engine-benchmark\\int8_selective_2-1\\trtexec.log",
+          "log_sha256": "71f4918bf27063ae3abb689c336afde94bb81014742462e97bd752b31ca7aed0",
+          "gpu_compute_ms": {
+            "count": 1000,
+            "p50": 2.7590950000000003,
+            "p95": 2.856979,
+            "p99": 2.9279034
+          }
+        },
+        {
+          "round": 2,
+          "command": [
+            "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+            "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+            "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/input.bin",
+            "--iterations=1000",
+            "--warmUp=1000",
+            "--duration=0",
+            "--avgRuns=1",
+            "--noDataTransfers",
+            "--exportTimes=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-engine-benchmark\\int8_selective_2-2\\times.json"
+          ],
+          "times": "runs\\trt-engine-benchmark\\int8_selective_2-2\\times.json",
+          "times_sha256": "b75d7f50dcc47f6cd69d30741a8e9371c3e380b6d2bebf2f5c64f062450db8b0",
+          "log": "runs\\trt-engine-benchmark\\int8_selective_2-2\\trtexec.log",
+          "log_sha256": "637cbbeefd6c9a2946f92dbc7a9924086d5f69d9f4e92a8890922deced3e78f8",
+          "gpu_compute_ms": {
+            "count": 1000,
+            "p50": 2.75354,
+            "p95": 2.85388,
+            "p99": 2.9306625
+          }
+        },
+        {
+          "round": 3,
+          "command": [
+            "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+            "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+            "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/input.bin",
+            "--iterations=1000",
+            "--warmUp=1000",
+            "--duration=0",
+            "--avgRuns=1",
+            "--noDataTransfers",
+            "--exportTimes=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-engine-benchmark\\int8_selective_2-3\\times.json"
+          ],
+          "times": "runs\\trt-engine-benchmark\\int8_selective_2-3\\times.json",
+          "times_sha256": "0b57dcebc8eabf1125488a4a211a1e66f0e87ef611c2581ac7758742f7aa6e40",
+          "log": "runs\\trt-engine-benchmark\\int8_selective_2-3\\trtexec.log",
+          "log_sha256": "e7eb0bee8885d1bf996f488d2b9579961a3dfc5d1e5c73ef1f466528af7898ad",
+          "gpu_compute_ms": {
+            "count": 1000,
+            "p50": 2.75824,
+            "p95": 2.87537,
+            "p99": 2.945092
+          }
+        }
+      ],
+      "median_round_p50_ms": 2.75824
+    }
+  },
+  "speedup_verified_for_full_cpp_pipeline": false,
+  "final_test_used": false,
+  "engine_only_speedup_fp32_over_int8": 2.87701033992691,
+  "fp32_tf32_policy": "TensorRT default permits TF32; --noTF32 was not passed"
+}

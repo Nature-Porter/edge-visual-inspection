@@ -1,0 +1,53 @@
+{
+  "candidate": "int8_selective_3",
+  "model_sha256": "1d9fee77e541f7db5c0131ef3c125cc42d285b74daef203f8903926427a53876",
+  "engine_sha256": "4c6225eeb630b99b8576da0994d5480a96e8cc6ec1c2ecb2d2b0328c7faf2a08",
+  "data_sha256": "650fecb79f57619cf23172f64cb61687a224c66c4d8f6c980a5a3fa14939bc1f",
+  "profile": "D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-cached-validation-int8_selective_3\\ort-profile_2026-09-30_18-56-47.json",
+  "profile_sha256": "67a885883b5a93cac1e37a1f485882ade08ae67a27a8bc42a1bf75a17307a35b",
+  "provider_operator_events": [
+    {
+      "provider": "CPUExecutionProvider",
+      "operator": "DequantizeLinear",
+      "events": 1311
+    },
+    {
+      "provider": "TensorrtExecutionProvider",
+      "operator": "MemcpyFromHost",
+      "events": 1311
+    },
+    {
+      "provider": "TensorrtExecutionProvider",
+      "operator": "TRTKernel_graph_main_graph_8103303637471459750_0",
+      "events": 69
+    }
+  ],
+  "coverage": {
+    "expected": 69,
+    "received": 69,
+    "valid": 69,
+    "ERROR": 0,
+    "coverage": 1.0,
+    "error_ids": []
+  },
+  "frozen_threshold": 0.4569705128669739,
+  "max_score_abs_vs_ort_cuda": 0.024022936820983887,
+  "metrics": {
+    "n": 69,
+    "TP": 27,
+    "FP": 2,
+    "TN": 38,
+    "FN": 2,
+    "FNR": 0.06896551724137931,
+    "FPR": 0.05,
+    "AUROC": 0.9767241379310344,
+    "AP": 0.9581030373451536,
+    "AP_definition": "sklearn non-interpolated average precision",
+    "undefined_reason": null,
+    "image_threshold": 0.4569705128669739
+  },
+  "status": "measured",
+  "final_test_used": false,
+  "threshold_recalibrated": false,
+  "int8_execution_verified": false
+}

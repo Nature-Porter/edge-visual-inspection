@@ -1,0 +1,61 @@
+# Local environments, SDKs, build products and caches
+.venv*/
+venv/
+build*/
+third_party/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.vs/
+.idea/
+CMakeUserPresets.json
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.dll
+
+# Downloaded data, pretrained weights and generated experiments
+data/raw/
+data/*.json
+datasets/
+pre_trained/
+artifacts/
+runs/
+*.engine
+*.plan
+/TensorrtExecutionProvider_*.onnx
+/tests/fixtures/conv/replay.json
+/tests/fixtures/alignment/
+
+# Raw logs and profiling traces; keep lightweight JSON summaries and previews
+*.log
+reports/*_profile_*.json
+reports/*.jsonl
+*.nsys-rep
+*.sqlite
+*.sqlite-*
+
+# Personal preparation material stays local
+docs/LEARNING_GUIDE.md
+**/*面试*
+**/*简历*
+**/*求职*
+**/interview*/
+**/Interview*/
+**/resume*/
+**/Resume*/
+
+# Local credentials and machine-specific settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+Thumbs.db
+.DS_Store

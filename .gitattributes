@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.png binary
+*.onnx binary
+*.f32 binary
+# Preserve recorded reports byte-for-byte for their SHA-256 evidence.
+reports/** -text

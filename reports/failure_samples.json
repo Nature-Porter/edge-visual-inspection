@@ -1,0 +1,338 @@
+{
+  "frozen_sha256": "a6c87689b14098a58f46f7b6dc363b29a975190be7f12e61ea6d2dfe4d18e12b",
+  "test_sha256": "bd2687fe0e1aefc00e7badd759252810ab604404d220d7b2e8c46f81a4194aed",
+  "candidates": [
+    {
+      "model_id": "efficientad_s_fp16",
+      "model_sha256": "d957a232a1e83acfcbb27b2ad2da25d371a146d1a1b5c52a65e5a01844bb32d7",
+      "false_negatives": [
+        {
+          "source_image_id": "1e5637c3409d05709eae62c7254f38900afa296902b1626e5902a5a2a4095f3d",
+          "path": "data/raw/metal_nut/test/scratch/000.png",
+          "defect_type": "scratch",
+          "score": 0.08221435546875,
+          "threshold": 0.25,
+          "label": 1
+        },
+        {
+          "source_image_id": "9d0fb31fac7ab42ddce02f5d1fd27940b04dfb10e28a1ab76c7ce010ba7bd772",
+          "path": "data/raw/metal_nut/test/scratch/001.png",
+          "defect_type": "scratch",
+          "score": 0.183837890625,
+          "threshold": 0.25,
+          "label": 1
+        },
+        {
+          "source_image_id": "7af3ba2320c1e556b9cef658ab7cdc8fb4deed8d47046e88bedca416963dd10d",
+          "path": "data/raw/metal_nut/test/scratch/002.png",
+          "defect_type": "scratch",
+          "score": 0.1834716796875,
+          "threshold": 0.25,
+          "label": 1
+        },
+        {
+          "source_image_id": "6ec49b4d1404f52c50ecc53162af16abcba436efa61b08c222aeb23f7d04d57d",
+          "path": "data/raw/metal_nut/test/scratch/003.png",
+          "defect_type": "scratch",
+          "score": 0.218994140625,
+          "threshold": 0.25,
+          "label": 1
+        },
+        {
+          "source_image_id": "37a381925d0e317e66323fd5c44dd27d871b5caddb68082401a04da5c4c89b10",
+          "path": "data/raw/metal_nut/test/scratch/020.png",
+          "defect_type": "scratch",
+          "score": 0.10406494140625,
+          "threshold": 0.25,
+          "label": 1
+        },
+        {
+          "source_image_id": "de3a7f9c1c72a5170f3710cf730040c63e0f8854dfced22c0445cfa2cd6109fd",
+          "path": "data/raw/metal_nut/test/scratch/021.png",
+          "defect_type": "scratch",
+          "score": 0.181640625,
+          "threshold": 0.25,
+          "label": 1
+        },
+        {
+          "source_image_id": "f88d2d084303ec537991d3f5263c4a9ba50eff042e4968ff8be2aebfe59e456a",
+          "path": "data/raw/metal_nut/test/scratch/022.png",
+          "defect_type": "scratch",
+          "score": 0.12158203125,
+          "threshold": 0.25,
+          "label": 1
+        }
+      ],
+      "false_positives": []
+    },
+    {
+      "model_id": "efficientad_s_fp32",
+      "model_sha256": "06155c78e0e1ab1dae61b28ab90bb90c19c2454dbc66039943897d6de2595aca",
+      "false_negatives": [
+        {
+          "source_image_id": "1e5637c3409d05709eae62c7254f38900afa296902b1626e5902a5a2a4095f3d",
+          "path": "data/raw/metal_nut/test/scratch/000.png",
+          "defect_type": "scratch",
+          "score": 0.08192228525876999,
+          "threshold": 0.25025269389152527,
+          "label": 1
+        },
+        {
+          "source_image_id": "9d0fb31fac7ab42ddce02f5d1fd27940b04dfb10e28a1ab76c7ce010ba7bd772",
+          "path": "data/raw/metal_nut/test/scratch/001.png",
+          "defect_type": "scratch",
+          "score": 0.18386024236679077,
+          "threshold": 0.25025269389152527,
+          "label": 1
+        },
+        {
+          "source_image_id": "7af3ba2320c1e556b9cef658ab7cdc8fb4deed8d47046e88bedca416963dd10d",
+          "path": "data/raw/metal_nut/test/scratch/002.png",
+          "defect_type": "scratch",
+          "score": 0.18387220799922943,
+          "threshold": 0.25025269389152527,
+          "label": 1
+        },
+        {
+          "source_image_id": "6ec49b4d1404f52c50ecc53162af16abcba436efa61b08c222aeb23f7d04d57d",
+          "path": "data/raw/metal_nut/test/scratch/003.png",
+          "defect_type": "scratch",
+          "score": 0.21974852681159973,
+          "threshold": 0.25025269389152527,
+          "label": 1
+        },
+        {
+          "source_image_id": "37a381925d0e317e66323fd5c44dd27d871b5caddb68082401a04da5c4c89b10",
+          "path": "data/raw/metal_nut/test/scratch/020.png",
+          "defect_type": "scratch",
+          "score": 0.10392312705516815,
+          "threshold": 0.25025269389152527,
+          "label": 1
+        },
+        {
+          "source_image_id": "de3a7f9c1c72a5170f3710cf730040c63e0f8854dfced22c0445cfa2cd6109fd",
+          "path": "data/raw/metal_nut/test/scratch/021.png",
+          "defect_type": "scratch",
+          "score": 0.18145178258419037,
+          "threshold": 0.25025269389152527,
+          "label": 1
+        },
+        {
+          "source_image_id": "f88d2d084303ec537991d3f5263c4a9ba50eff042e4968ff8be2aebfe59e456a",
+          "path": "data/raw/metal_nut/test/scratch/022.png",
+          "defect_type": "scratch",
+          "score": 0.12137151509523392,
+          "threshold": 0.25025269389152527,
+          "label": 1
+        }
+      ],
+      "false_positives": []
+    },
+    {
+      "model_id": "efficientad_s_int8_percentile",
+      "model_sha256": "ec12497899f33f8305a19c8c7cbc795ee24f96cd7f8b074a36d20aac4a2098f7",
+      "false_negatives": [
+        {
+          "source_image_id": "1e5637c3409d05709eae62c7254f38900afa296902b1626e5902a5a2a4095f3d",
+          "path": "data/raw/metal_nut/test/scratch/000.png",
+          "defect_type": "scratch",
+          "score": 0.1805570274591446,
+          "threshold": 0.3303215801715851,
+          "label": 1
+        },
+        {
+          "source_image_id": "9d0fb31fac7ab42ddce02f5d1fd27940b04dfb10e28a1ab76c7ce010ba7bd772",
+          "path": "data/raw/metal_nut/test/scratch/001.png",
+          "defect_type": "scratch",
+          "score": 0.23551411926746368,
+          "threshold": 0.3303215801715851,
+          "label": 1
+        },
+        {
+          "source_image_id": "7af3ba2320c1e556b9cef658ab7cdc8fb4deed8d47046e88bedca416963dd10d",
+          "path": "data/raw/metal_nut/test/scratch/002.png",
+          "defect_type": "scratch",
+          "score": 0.26000988483428955,
+          "threshold": 0.3303215801715851,
+          "label": 1
+        },
+        {
+          "source_image_id": "6ec49b4d1404f52c50ecc53162af16abcba436efa61b08c222aeb23f7d04d57d",
+          "path": "data/raw/metal_nut/test/scratch/003.png",
+          "defect_type": "scratch",
+          "score": 0.29863619804382324,
+          "threshold": 0.3303215801715851,
+          "label": 1
+        },
+        {
+          "source_image_id": "37a381925d0e317e66323fd5c44dd27d871b5caddb68082401a04da5c4c89b10",
+          "path": "data/raw/metal_nut/test/scratch/020.png",
+          "defect_type": "scratch",
+          "score": 0.16133034229278564,
+          "threshold": 0.3303215801715851,
+          "label": 1
+        },
+        {
+          "source_image_id": "de3a7f9c1c72a5170f3710cf730040c63e0f8854dfced22c0445cfa2cd6109fd",
+          "path": "data/raw/metal_nut/test/scratch/021.png",
+          "defect_type": "scratch",
+          "score": 0.2738803029060364,
+          "threshold": 0.3303215801715851,
+          "label": 1
+        },
+        {
+          "source_image_id": "f88d2d084303ec537991d3f5263c4a9ba50eff042e4968ff8be2aebfe59e456a",
+          "path": "data/raw/metal_nut/test/scratch/022.png",
+          "defect_type": "scratch",
+          "score": 0.17180070281028748,
+          "threshold": 0.3303215801715851,
+          "label": 1
+        }
+      ],
+      "false_positives": []
+    },
+    {
+      "model_id": "efficientad_s_int8_selective_2",
+      "model_sha256": "4d34cefa689b1b6800165a519ac1cbc746e5cf0712245fe953a7a857674ff107",
+      "false_negatives": [
+        {
+          "source_image_id": "0baf957a972988323713a48fdf85c5e93cd3f21ac3d829095c13f703e6aed14b",
+          "path": "data/raw/metal_nut/test/color/000.png",
+          "defect_type": "color",
+          "score": 0.42238789796829224,
+          "threshold": 0.4560212194919586,
+          "label": 1
+        },
+        {
+          "source_image_id": "cc71de463f69646b944cf0d1eda8a878a876fdcc060dc726f26e78180aa7bedb",
+          "path": "data/raw/metal_nut/test/color/001.png",
+          "defect_type": "color",
+          "score": 0.3623683750629425,
+          "threshold": 0.4560212194919586,
+          "label": 1
+        },
+        {
+          "source_image_id": "1e5637c3409d05709eae62c7254f38900afa296902b1626e5902a5a2a4095f3d",
+          "path": "data/raw/metal_nut/test/scratch/000.png",
+          "defect_type": "scratch",
+          "score": 0.18887242674827576,
+          "threshold": 0.4560212194919586,
+          "label": 1
+        },
+        {
+          "source_image_id": "9d0fb31fac7ab42ddce02f5d1fd27940b04dfb10e28a1ab76c7ce010ba7bd772",
+          "path": "data/raw/metal_nut/test/scratch/001.png",
+          "defect_type": "scratch",
+          "score": 0.25160646438598633,
+          "threshold": 0.4560212194919586,
+          "label": 1
+        },
+        {
+          "source_image_id": "7af3ba2320c1e556b9cef658ab7cdc8fb4deed8d47046e88bedca416963dd10d",
+          "path": "data/raw/metal_nut/test/scratch/002.png",
+          "defect_type": "scratch",
+          "score": 0.3467605710029602,
+          "threshold": 0.4560212194919586,
+          "label": 1
+        },
+        {
+          "source_image_id": "37a381925d0e317e66323fd5c44dd27d871b5caddb68082401a04da5c4c89b10",
+          "path": "data/raw/metal_nut/test/scratch/020.png",
+          "defect_type": "scratch",
+          "score": 0.254129558801651,
+          "threshold": 0.4560212194919586,
+          "label": 1
+        },
+        {
+          "source_image_id": "de3a7f9c1c72a5170f3710cf730040c63e0f8854dfced22c0445cfa2cd6109fd",
+          "path": "data/raw/metal_nut/test/scratch/021.png",
+          "defect_type": "scratch",
+          "score": 0.24868951737880707,
+          "threshold": 0.4560212194919586,
+          "label": 1
+        },
+        {
+          "source_image_id": "f88d2d084303ec537991d3f5263c4a9ba50eff042e4968ff8be2aebfe59e456a",
+          "path": "data/raw/metal_nut/test/scratch/022.png",
+          "defect_type": "scratch",
+          "score": 0.23451510071754456,
+          "threshold": 0.4560212194919586,
+          "label": 1
+        }
+      ],
+      "false_positives": []
+    },
+    {
+      "model_id": "efficientad_s_int8_selective_3",
+      "model_sha256": "1d9fee77e541f7db5c0131ef3c125cc42d285b74daef203f8903926427a53876",
+      "false_negatives": [
+        {
+          "source_image_id": "0baf957a972988323713a48fdf85c5e93cd3f21ac3d829095c13f703e6aed14b",
+          "path": "data/raw/metal_nut/test/color/000.png",
+          "defect_type": "color",
+          "score": 0.4153042435646057,
+          "threshold": 0.4569705128669739,
+          "label": 1
+        },
+        {
+          "source_image_id": "cc71de463f69646b944cf0d1eda8a878a876fdcc060dc726f26e78180aa7bedb",
+          "path": "data/raw/metal_nut/test/color/001.png",
+          "defect_type": "color",
+          "score": 0.3607451617717743,
+          "threshold": 0.4569705128669739,
+          "label": 1
+        },
+        {
+          "source_image_id": "1e5637c3409d05709eae62c7254f38900afa296902b1626e5902a5a2a4095f3d",
+          "path": "data/raw/metal_nut/test/scratch/000.png",
+          "defect_type": "scratch",
+          "score": 0.18047979474067688,
+          "threshold": 0.4569705128669739,
+          "label": 1
+        },
+        {
+          "source_image_id": "9d0fb31fac7ab42ddce02f5d1fd27940b04dfb10e28a1ab76c7ce010ba7bd772",
+          "path": "data/raw/metal_nut/test/scratch/001.png",
+          "defect_type": "scratch",
+          "score": 0.24843627214431763,
+          "threshold": 0.4569705128669739,
+          "label": 1
+        },
+        {
+          "source_image_id": "7af3ba2320c1e556b9cef658ab7cdc8fb4deed8d47046e88bedca416963dd10d",
+          "path": "data/raw/metal_nut/test/scratch/002.png",
+          "defect_type": "scratch",
+          "score": 0.3475272059440613,
+          "threshold": 0.4569705128669739,
+          "label": 1
+        },
+        {
+          "source_image_id": "37a381925d0e317e66323fd5c44dd27d871b5caddb68082401a04da5c4c89b10",
+          "path": "data/raw/metal_nut/test/scratch/020.png",
+          "defect_type": "scratch",
+          "score": 0.24820668995380402,
+          "threshold": 0.4569705128669739,
+          "label": 1
+        },
+        {
+          "source_image_id": "de3a7f9c1c72a5170f3710cf730040c63e0f8854dfced22c0445cfa2cd6109fd",
+          "path": "data/raw/metal_nut/test/scratch/021.png",
+          "defect_type": "scratch",
+          "score": 0.24223920702934265,
+          "threshold": 0.4569705128669739,
+          "label": 1
+        },
+        {
+          "source_image_id": "f88d2d084303ec537991d3f5263c4a9ba50eff042e4968ff8be2aebfe59e456a",
+          "path": "data/raw/metal_nut/test/scratch/022.png",
+          "defect_type": "scratch",
+          "score": 0.22479112446308136,
+          "threshold": 0.4569705128669739,
+          "label": 1
+        }
+      ],
+      "false_positives": []
+    }
+  ],
+  "note": "Post-hoc analysis only; no model or threshold is changed from the frozen protocol."
+}

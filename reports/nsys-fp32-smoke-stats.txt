@@ -1,0 +1,59 @@
+﻿
+NOTICE: Existing SQLite export found: reports/nsys-fp32-smoke.sqlite
+        It is assumed file was previously exported from: reports/nsys-fp32-smoke.nsys-rep
+        Consider using --force-export=true if needed.
+
+Processing [reports/nsys-fp32-smoke.sqlite] with [C:\Program Files\NVIDIA Corporation\Nsight Systems 2024.2.3\host-windows-x64\reports\cuda_gpu_kern_sum.py]... 
+
+ ** CUDA GPU Kernel Summary (cuda_gpu_kern_sum):
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)   Med (ns)   Min (ns)  Max (ns)  StdDev (ns)                                                  Name                                                
+ --------  ---------------  ---------  ---------  ---------  --------  --------  -----------  ----------------------------------------------------------------------------------------------------
+     39.0         63515802         78   814305.2   256890.5     42978   2795604     926504.0  _5x_cudnn_ampere_scudnn_128x64_relu_xregs_large_nn_v1                                               
+     34.0         55340523         26  2128481.7  2230300.5   1512511   3105697     614276.0  _5x_cudnn_ampere_scudnn_128x128_relu_xregs_large_nn_v1                                              
+      7.3         11950583         52   229818.9   244986.5     30817    668956     161662.6  _5x_cudnn_ampere_scudnn_winograd_128x128_ldg1_ldg4_relu_tile148t_nt_v1                              
+      3.7          6061720        273    22204.1     8096.0      1664    132389      33072.9  void op_generic_tensor_kernel<(int)3, float, float, float, (int)256, (cudnnGenericOp_t)0, (cudnnNan�
+      3.0          4820362         52    92699.3    83091.5     27745    430674      76786.5  void cudnn::pooling_fw_4d_kernel<float, float, cudnn::averpooling_func<float, (bool)1>, (cudnnPooli�
+      2.9          4767493         52    91682.6    91956.0     87971     97636       2629.7  void implicit_convolve_sgemm<float, float, int, (int)128, (int)6, (int)7, (int)3, (int)3, (int)5, (�
+      2.7          4360400         65    67083.1    51362.0     20961    310284      49582.8  void implicit_convolve_sgemm<float, float, int, (int)128, (int)5, (int)5, (int)3, (int)3, (int)3, (�
+      2.2          3640630        234    15558.2     2352.5       992    384336      35683.0  void onnxruntime::cuda::_UnaryElementWise<float, float, onnxruntime::cuda::OP_Relu<float>, (int)256�
+      0.9          1454074         26    55925.9    55346.0     52578     70499       3255.1  void fft2d_r2c_32x32<float, (bool)0, (unsigned int)1, (bool)1>(float2 *, const T1 *, int, int, int,�
+      0.7          1137582         52    21876.6    11568.5      6016     71843      18975.1  void fft2d_r2c_32x32<float, (bool)0, (unsigned int)1, (bool)0>(float2 *, const T1 *, int, int, int,�
+      0.4           638008         26    24538.8    24417.5     24225     25281        319.9  void onnxruntime::cuda::_BinaryElementWiseSimple<(bool)1, (bool)0, float, float, float, onnxruntime�
+      0.4           613810        117     5246.2     2752.0      1345     22369       6313.0  void onnxruntime::cuda::_ResizeBilinearKernel<float>(long long, long long, long long, long long, on�
+      0.3           539220         13    41478.5    41602.0     37633     44674       2218.7  void precomputed_convolve_sgemm<float, int, (int)1024, (int)5, (int)5, (int)4, (int)3, (int)3, (int�
+      0.3           522869         52    10055.2    10160.0      2176     17440       6336.1  void cudnn::winograd::generateWinogradTilesKernel<(int)0, float, float>(cudnn::winograd::GenerateWi�
+      0.3           497495         26    19134.4    20401.0     15553     25217       2564.2  void onnxruntime::cuda::_BinaryElementWiseSimple<(bool)1, (bool)1, float, float, float, onnxruntime�
+      0.3           435853         26    16763.6    16752.5     16704     16897         42.2  void onnxruntime::cuda::detail::reduce_matrix_rows_kernel<float, float, float>(const T1 *, T2 *, in�
+      0.2           393519         26    15135.3    15104.5     14817     15617        157.4  std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float2, float2, float2, float2, (�
+      0.2           337714         26    12989.0    12864.5      6401     19969       6581.3  std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float2, float2, float2, float2, (�
+      0.2           249640         26     9601.5    11024.0      2560     14913       5223.9  void fft2d_r2c_16x16<float>(float2 *, const T1 *, int, int, int, int, int, int, int, int)           
+      0.1           230154         13    17704.2    17665.0     17568     18113        153.6  void onnxruntime::cuda::_SplitKernelSameSplitDim<int, onnxruntime::cuda::TArray<void *, (int)32>>(o�
+      0.1           217673         39     5581.4     5568.0      5312      6464        258.3  void fft2d_c2r_32x32<float, (bool)0, (bool)0, (unsigned int)1, (bool)0, (bool)0>(T1 *, const float2�
+      0.1           211535         26     8136.0     8032.5      7457      8577        379.2  void flip_filter<float, float>(T2 *, const T1 *, int, int, int, int)                                
+      0.1           192998         26     7423.0     6160.5      2527     13152       4981.2  void onnxruntime::cuda::_BinaryElementWiseRhsPerChannelBatch1<float, float, float, onnxruntime::cud�
+      0.1           170024         26     6539.4     6256.5      2560     11201       3792.7  void onnxruntime::cuda::_BinaryElementWiseRhsPerChannelBatch1<float, float, float, onnxruntime::cud�
+      0.1           156490        104     1504.7     1280.0      1184      2688        400.1  void cask__5x_cudnn::computeOffsetsKernel<(bool)0, (bool)0>(cask__5x_cudnn::ComputeOffsetsParams)   
+      0.1           126058        117     1077.4     1056.0       960      1184         58.9  void onnxruntime::cuda::_ResizeBilinearCoordinateMapping<float, onnxruntime::cuda::TransformCoordin�
+      0.0            78656         52     1512.6     1504.0      1472      1664         35.9  void onnxruntime::cuda::_BinaryElementWiseSimple<(bool)1, (bool)0, float, float, float, onnxruntime�
+      0.0            49730         13     3825.4     3840.0      3776      3904         38.3  inspection::reduce_blocks(const float *, unsigned long long, float, bool, unsigned char *, float *,�
+      0.0            46017         13     3539.8     3457.0      3328      3936        169.6  void fft2d_c2r_16x16<float, (bool)0>(T1 *, float2 *, int, int, int, int, int, int, int, int, int, i�
+      0.0            44258         26     1702.2     1696.0      1664      1824         38.4  void onnxruntime::cuda::_BinaryElementWiseSimple<(bool)1, (bool)0, float, float, float, onnxruntime�
+      0.0            39905         26     1534.8     1536.0      1503      1600         24.8  void onnxruntime::cuda::_BinaryElementWiseSimple<(bool)1, (bool)0, float, float, float, onnxruntime�
+      0.0            32324         26     1243.2     1248.0      1216      1376         30.9  void onnxruntime::cuda::_PadNCHWInputWithPaddingAlongHAndWKernel<float, (int)0>(long long, long lon�
+      0.0            31843         26     1224.7     1216.0      1215      1280         17.0  void onnxruntime::cuda::_UnaryElementWise<float, float, onnxruntime::cuda::OP_Div<float>, (int)256,�
+      0.0            29316         13     2255.1     2240.0      2176      2369         56.4  void onnxruntime::cuda::_BinaryElementWiseSimple<(bool)1, (bool)1, float, float, float, onnxruntime�
+      0.0            21568         13     1659.1     1632.0      1632      1760         46.8  void op_generic_tensor_kernel<(int)1, float, float, float, (int)256, (cudnnGenericOp_t)0, (cudnnNan�
+      0.0            18751         13     1442.4     1440.0      1408      1472         15.8  inspection::reduce_final(const float *, unsigned long long, float *)                                
+      0.0            13151         13     1011.6     1023.0       992      1024         16.0  void cudnn::cnn::kern_precompute_indices<(bool)0>(int *, int, int, int, int, int)                   
+
+Processing [reports/nsys-fp32-smoke.sqlite] with [C:\Program Files\NVIDIA Corporation\Nsight Systems 2024.2.3\host-windows-x64\reports\cuda_gpu_mem_time_sum.py]... 
+
+ ** CUDA GPU MemOps Summary (by Time) (cuda_gpu_mem_time_sum):
+
+ Time (%)  Total Time (ns)  Count  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)           Operation          
+ --------  ---------------  -----  --------  --------  --------  --------  -----------  ----------------------------
+     98.1          3344555     68   49184.6    1584.0       320   1028427     139598.2  [CUDA memcpy Host-to-Device]
+      1.1            36389     41     887.5    1088.0       288      1600        422.3  [CUDA memset]               
+      0.9            29348     26    1128.8    1104.0       960      1536        181.6  [CUDA memcpy Device-to-Host]
+

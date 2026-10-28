@@ -1,0 +1,164 @@
+{
+  "frozen_sha256": "a6c87689b14098a58f46f7b6dc363b29a975190be7f12e61ea6d2dfe4d18e12b",
+  "test_sha256": "bd2687fe0e1aefc00e7badd759252810ab604404d220d7b2e8c46f81a4194aed",
+  "reference": "efficientad_s_fp32",
+  "unique_test_images": 79,
+  "candidates": [
+    {
+      "model_id": "efficientad_s_fp16",
+      "model_sha256": "d957a232a1e83acfcbb27b2ad2da25d371a146d1a1b5c52a65e5a01844bb32d7",
+      "manifest": "artifacts/metal_nut/fp16/model_manifest.json",
+      "metrics": {
+        "n": 79,
+        "TP": 57,
+        "FP": 0,
+        "TN": 15,
+        "FN": 7,
+        "FNR": 0.109375,
+        "FPR": 0.0,
+        "AUROC": 0.9760416666666667,
+        "AP": 0.9947803093720105,
+        "AP_definition": "sklearn non-interpolated average precision",
+        "undefined_reason": null,
+        "image_threshold": 0.25
+      },
+      "wilson95_fnr": [
+        0.05400113344416797,
+        0.20898641326896122
+      ],
+      "wilson95_fpr": [
+        0.0,
+        0.20388330103584862
+      ],
+      "relative_auroc_drop": 0.0,
+      "relative_fnr_increase": 0.0,
+      "final_quality_gate": true,
+      "int8_execution_verified": false
+    },
+    {
+      "model_id": "efficientad_s_fp32",
+      "model_sha256": "06155c78e0e1ab1dae61b28ab90bb90c19c2454dbc66039943897d6de2595aca",
+      "manifest": "artifacts/metal_nut/fp32/model_manifest.json",
+      "metrics": {
+        "n": 79,
+        "TP": 57,
+        "FP": 0,
+        "TN": 15,
+        "FN": 7,
+        "FNR": 0.109375,
+        "FPR": 0.0,
+        "AUROC": 0.9760416666666667,
+        "AP": 0.9947803093720105,
+        "AP_definition": "sklearn non-interpolated average precision",
+        "undefined_reason": null,
+        "image_threshold": 0.25025269389152527
+      },
+      "wilson95_fnr": [
+        0.05400113344416797,
+        0.20898641326896122
+      ],
+      "wilson95_fpr": [
+        0.0,
+        0.20388330103584862
+      ],
+      "relative_auroc_drop": 0.0,
+      "relative_fnr_increase": 0.0,
+      "final_quality_gate": true,
+      "int8_execution_verified": false
+    },
+    {
+      "model_id": "efficientad_s_int8_percentile",
+      "model_sha256": "ec12497899f33f8305a19c8c7cbc795ee24f96cd7f8b074a36d20aac4a2098f7",
+      "manifest": "artifacts/metal_nut/int8_percentile/model_manifest.json",
+      "metrics": {
+        "n": 79,
+        "TP": 57,
+        "FP": 0,
+        "TN": 15,
+        "FN": 7,
+        "FNR": 0.109375,
+        "FPR": 0.0,
+        "AUROC": 0.9552083333333334,
+        "AP": 0.990976435714626,
+        "AP_definition": "sklearn non-interpolated average precision",
+        "undefined_reason": null,
+        "image_threshold": 0.3303215801715851
+      },
+      "wilson95_fnr": [
+        0.05400113344416797,
+        0.20898641326896122
+      ],
+      "wilson95_fpr": [
+        0.0,
+        0.20388330103584862
+      ],
+      "relative_auroc_drop": 0.02083333333333326,
+      "relative_fnr_increase": 0.0,
+      "final_quality_gate": false,
+      "int8_execution_verified": false
+    },
+    {
+      "model_id": "efficientad_s_int8_selective_2",
+      "model_sha256": "4d34cefa689b1b6800165a519ac1cbc746e5cf0712245fe953a7a857674ff107",
+      "manifest": "artifacts/metal_nut/int8_selective_2/model_manifest.json",
+      "metrics": {
+        "n": 79,
+        "TP": 56,
+        "FP": 0,
+        "TN": 15,
+        "FN": 8,
+        "FNR": 0.125,
+        "FPR": 0.0,
+        "AUROC": 0.9895833333333334,
+        "AP": 0.9978885135135135,
+        "AP_definition": "sklearn non-interpolated average precision",
+        "undefined_reason": null,
+        "image_threshold": 0.4560212194919586
+      },
+      "wilson95_fnr": [
+        0.06472242663330453,
+        0.22774561821129946
+      ],
+      "wilson95_fpr": [
+        0.0,
+        0.20388330103584862
+      ],
+      "relative_auroc_drop": -0.013541666666666674,
+      "relative_fnr_increase": 0.015625,
+      "final_quality_gate": true,
+      "int8_execution_verified": false
+    },
+    {
+      "model_id": "efficientad_s_int8_selective_3",
+      "model_sha256": "1d9fee77e541f7db5c0131ef3c125cc42d285b74daef203f8903926427a53876",
+      "manifest": "artifacts/metal_nut/int8_selective_3/model_manifest.json",
+      "metrics": {
+        "n": 79,
+        "TP": 56,
+        "FP": 0,
+        "TN": 15,
+        "FN": 8,
+        "FNR": 0.125,
+        "FPR": 0.0,
+        "AUROC": 0.9895833333333334,
+        "AP": 0.9978885135135135,
+        "AP_definition": "sklearn non-interpolated average precision",
+        "undefined_reason": null,
+        "image_threshold": 0.4569705128669739
+      },
+      "wilson95_fnr": [
+        0.06472242663330453,
+        0.22774561821129946
+      ],
+      "wilson95_fpr": [
+        0.0,
+        0.20388330103584862
+      ],
+      "relative_auroc_drop": -0.013541666666666674,
+      "relative_fnr_increase": 0.015625,
+      "final_quality_gate": true,
+      "int8_execution_verified": false
+    }
+  ],
+  "note": "All candidates were frozen before reading test; this report does not revise selection or thresholds."
+}

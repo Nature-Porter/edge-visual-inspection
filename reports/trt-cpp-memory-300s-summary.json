@@ -1,0 +1,30 @@
+{
+  "source_sha256": "b94cf20d4c4c07200e41bdbb1b1f6bda8d31122ae3b55e878aecf626444fe544",
+  "sample_count": 27,
+  "first_utc": "2026-09-30T15:16:17.512737+00:00",
+  "last_utc": "2026-09-30T15:20:48.712319+00:00",
+  "sampled_seconds": 271.2030000000086,
+  "global_gpu_used_mib": {
+    "first": 1351.0,
+    "last": 1352.0,
+    "min": 1348.0,
+    "max": 1355.0,
+    "last_minus_first": 1.0
+  },
+  "inspection_working_set_mib": {
+    "first": 296.85546875,
+    "last": 298.16796875,
+    "min": 295.68359375,
+    "max": 298.16796875,
+    "last_minus_first": 1.3125
+  },
+  "temperature_c": {
+    "first": 53.0,
+    "last": 55.0,
+    "min": 53.0,
+    "max": 55.0,
+    "last_minus_first": 2.0
+  },
+  "process_gpu_memory_bytes": null,
+  "gpu_memory_method": "nvidia-smi global device memory; WDDM process-specific VRAM unavailable"
+}

@@ -1,0 +1,32 @@
+project:
+  category: metal_nut
+  seed: 42
+data:
+  root: data/raw/metal_nut
+model:
+  architecture: efficientad_s
+  input_size: [256, 256]
+  batch_size: 1
+training:
+  max_steps: 10000
+  learning_rate: 0.0001
+  imagenette: data/raw/imagenette2/train
+calibration:
+  max_images: 128
+  methods: [minmax, percentile]
+runtime:
+  fps: 20
+  deadline_ms: 50
+  queue_capacity: 4
+  warmup: 100
+quality:
+  validation_fpr_budget: 0.10
+  max_auroc_drop: 0.01
+  max_fnr_increase: 0.02
+alignment:
+  atol: 0.00001
+  rtol: 0.0001
+acceptance:
+  p95_decision_ms: 40
+  max_timeout_ratio: 0.01
+  soak_seconds: 1800

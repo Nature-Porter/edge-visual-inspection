@@ -1,0 +1,411 @@
+{
+  "P0": {
+    "status": "passed",
+    "started_utc": "2026-09-30T04:15:58.882551+00:00",
+    "inputs": {
+      "CMakeLists.txt": "1ea973405166aaad58be3b56e641dabd59edc43bce7b71ca5cc5edc4fe93b913",
+      "scripts/build_windows.ps1": "a45528ca103bdb00d3edd37bb8a0c4a9378387247a95a53d31d65f374cae9914"
+    },
+    "commands": [
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/environment.py",
+          "--output",
+          "reports/environment-current.json"
+        ],
+        "log": "reports/pipeline/P0-0.log",
+        "exit_code": 0,
+        "log_sha256": "5783c287146dfd296c8b97b969d7c68f5924d4bea5311290cd364247824f0cf3"
+      },
+      {
+        "argv": [
+          "powershell",
+          "-NoProfile",
+          "-File",
+          "scripts/build_windows.ps1"
+        ],
+        "log": "reports/pipeline/P0-1.log",
+        "exit_code": 0,
+        "log_sha256": "e5fe483d66f76e12d1e5cbc7d9ef9e40d45e747217a6d57e0771d7857d976f5c"
+      },
+      {
+        "argv": [
+          "powershell",
+          "-NoProfile",
+          "-File",
+          "scripts/probe_cuda.ps1"
+        ],
+        "log": "reports/pipeline/P0-2.log",
+        "exit_code": 0,
+        "log_sha256": "2764efbd1bfd8fd7461c64ff7608046d43f72408391697172adfa5f3fb2bf847"
+      }
+    ],
+    "outputs": {
+      "build/inspection.exe": "a8c56bed470f9f62a0b0bd27a02fe682d115df8ff0e43741dd725736350d11af",
+      "reports/environment-current.json": "02bbeaab5fb3a93f89f1fa67b77b432e6957fe9f77fe5d8f552433125813c05c"
+    },
+    "finished_utc": "2026-09-30T04:16:48.947354+00:00"
+  },
+  "P1": {
+    "status": "passed",
+    "inputs": {
+      "configs/metal_nut.yaml": "fa6f1dc37dab9219bd1af364f4824703f11d4cae0e514c3fe750ebf156eb88ed",
+      "tools/prepare_data.py": "bed06cc5d532800cd27b0dee57d7fa4e0857f4c6c08b8d127950e0260c31fc25",
+      "tools/train.py": "900437a6464859307afcb9cabb14b3275cae4348e54734957eb7c39890c8f2b0",
+      "data/raw/imagenette2.tgz": "6cbfac238434d89fe99e651496f0812ebc7a10fa62bd42d6874042bf01de4efd",
+      "data/train_normal.json": "b71853178dfb727ebfb7606e43b4fa87beb7f62da2a8391e5a5e5736e2805f39",
+      "data/stats_normal.json": "80b04df6a24a835b9c18135bfab6c4414da5ee15076ee16e7a9b6f3d51977d8b"
+    },
+    "commands": [],
+    "adopted_existing_training": true,
+    "outputs": {
+      "artifacts/metal_nut/training/model.ckpt": "bf15f84a0f2e267a28fe9a43d98518c9795c88fe83471a149083079140fdf7a4",
+      "artifacts/metal_nut/training/training.json": "b7d5a51f5c976e34d261b6b53bfb1b0e499ad00dcf0c3e94410de79c0691c01b"
+    }
+  },
+  "P2": {
+    "status": "passed",
+    "started_utc": "2026-09-30T04:17:59.286524+00:00",
+    "inputs": {
+      "configs/metal_nut.yaml": "fa6f1dc37dab9219bd1af364f4824703f11d4cae0e514c3fe750ebf156eb88ed",
+      "tools/export_onnx.py": "f58f1fcd7abc6e66b3d9bc91d13672fa5825531a75acaf987654ddf9a153ba6b",
+      "artifacts/metal_nut/training/model.ckpt": "bf15f84a0f2e267a28fe9a43d98518c9795c88fe83471a149083079140fdf7a4",
+      "data/validation.json": "650fecb79f57619cf23172f64cb61687a224c66c4d8f6c980a5a3fa14939bc1f"
+    },
+    "commands": [
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-train\\Scripts\\python.exe",
+          "tools/export_onnx.py",
+          "--config",
+          "configs/metal_nut.yaml"
+        ],
+        "log": "reports/pipeline/P2-0.log",
+        "exit_code": 0,
+        "log_sha256": "37179576c1c7172bb0eb76228afd95b57192d9f21cbb71e467608a2a24b98d7f"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-train\\Scripts\\python.exe",
+          "tools/verify_alignment.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--cpp"
+        ],
+        "log": "reports/pipeline/P2-1.log",
+        "exit_code": 0,
+        "log_sha256": "eb902158ebbe173b1fdda502c9340cf7573c9398a207d8e56193fc1169660ae9"
+      }
+    ],
+    "outputs": {
+      "artifacts/metal_nut/fp32/model.onnx": "06155c78e0e1ab1dae61b28ab90bb90c19c2454dbc66039943897d6de2595aca",
+      "artifacts/metal_nut/fp32/model_manifest.json": "6dbbc19cdeffcb245f8a5cd0920e2d2fd6c83dcaaae0d9fdd7e44eba10acb650",
+      "reports/alignment.json": "abe8a4e6b1d1cba3bd7c9c40645e6f6a883fb2b43b9e1b350d948e8c058fa994"
+    },
+    "finished_utc": "2026-09-30T04:19:36.988224+00:00"
+  },
+  "P3": {
+    "status": "passed",
+    "inputs": {
+      "artifacts/metal_nut/fp32/model_manifest.json": "bb5f3514acfc0c6a3ddaf2e8015a2adda070f89e09f9b130470637bc1aaa8122",
+      "data/replay.json": "7d019d20f30f11aa30c66853d0b09a376f6911d25da388f65c0d37759f11edfb"
+    },
+    "commands": [],
+    "adopted_existing_baseline": true,
+    "outputs": {
+      "artifacts/metal_nut/fp32/validation_quality.json": "82b3cca8b3d48438fcddefb5fe0a2e9d3a7cba7ef61a90cdabc34d128f6701fb",
+      "runs/baseline/snapshot.json": "c6e38b9e73229291a29830e65c9128e0980129a1f10c98ae6f3bd542af8698ac",
+      "runs/baseline/summary.json": "a244b0719ec886cb65d8d2b27f16170d687a17636ed44babf13e0c1f62217228",
+      "runs/baseline/events.jsonl": "1813812f1bef17924cb7e50255ce489976280dc8281dd6d2ed88190ab76a531e",
+      "reports/baseline-validation.json": "31c9f66c72f232a1106f71f2840b16d1ad0c255723cdb54229eb9cad8bb9ae86"
+    }
+  },
+  "P4": {
+    "status": "passed",
+    "started_utc": "2026-09-30T04:26:11.637052+00:00",
+    "inputs": {
+      "artifacts/metal_nut/fp32/model.onnx": "06155c78e0e1ab1dae61b28ab90bb90c19c2454dbc66039943897d6de2595aca",
+      "data/calibration.json": "0ac2b6d4ce5b2c75f616042aabf57e05e200cfe2ccdcf236b2b9087cce19340c",
+      "data/validation.json": "650fecb79f57619cf23172f64cb61687a224c66c4d8f6c980a5a3fa14939bc1f"
+    },
+    "commands": [
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/activation_diagnostics.py"
+        ],
+        "log": "reports/pipeline/P4-0.log",
+        "exit_code": 0,
+        "log_sha256": "297ec338e9ec3ba40f5a70e005765053659f446daa24fdd0f9923086f19be03f"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/quantize.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--phase",
+          "selective"
+        ],
+        "log": "reports/pipeline/P4-1.log",
+        "exit_code": 0,
+        "log_sha256": "e4a7abd5b15bb71a790fa58de65f5722f468e8f374a5bfc3ca256fa4a5d346fc"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--manifest",
+          "artifacts/metal_nut/fp16/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P4-2.log",
+        "exit_code": 0,
+        "log_sha256": "f18f1710371b6686dc381f7cee9536646c6d567c6d2389917662f134a130d01c"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--manifest",
+          "artifacts/metal_nut/int8_minmax/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P4-3.log",
+        "exit_code": 0,
+        "log_sha256": "aaa701422a1a5d8039398ad79acb452d38935e3cf392e5d92d869ae781db9616"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--manifest",
+          "artifacts/metal_nut/int8_percentile/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P4-4.log",
+        "exit_code": 0,
+        "log_sha256": "2d23ad8dcde2f4e6a767def3a3fec3e06132909c26fc28081d28c7f8041d13f6"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--manifest",
+          "artifacts/metal_nut/int8_selective_1/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P4-5.log",
+        "exit_code": 0,
+        "log_sha256": "c39a8a5733c0acdc57db7480238048ce8d3ad1347572eaef5984ee560924a763"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--manifest",
+          "artifacts/metal_nut/int8_selective_2/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P4-6.log",
+        "exit_code": 0,
+        "log_sha256": "9f868bf5a1f350f286ea22535c5abe3198f5bb4dac0e1a03f95f82d1ecc1c5d2"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--manifest",
+          "artifacts/metal_nut/int8_selective_3/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P4-7.log",
+        "exit_code": 0,
+        "log_sha256": "7c160240229ae7f36193b64246219aab9c14c02de656b47a6bef102da6a055c7"
+      }
+    ],
+    "outputs": {
+      "reports/quantization.json": "3dccefec6296df9dab3f8c2781494b3bcb952a6c016ac02c1f751874f9420993"
+    },
+    "finished_utc": "2026-09-30T04:28:01.048807+00:00"
+  },
+  "P7": {
+    "status": "passed",
+    "started_utc": "2026-09-30T09:25:12.957980+00:00",
+    "inputs": {
+      "configs/metal_nut.yaml": "fa6f1dc37dab9219bd1af364f4824703f11d4cae0e514c3fe750ebf156eb88ed",
+      "artifacts/metal_nut/fp32/validation_quality.json": "82b3cca8b3d48438fcddefb5fe0a2e9d3a7cba7ef61a90cdabc34d128f6701fb",
+      "reports/quantization.json": "3dccefec6296df9dab3f8c2781494b3bcb952a6c016ac02c1f751874f9420993",
+      "data/test.json": "bd2687fe0e1aefc00e7badd759252810ab604404d220d7b2e8c46f81a4194aed",
+      "data/replay.json": "7d019d20f30f11aa30c66853d0b09a376f6911d25da388f65c0d37759f11edfb"
+    },
+    "commands": [
+      {
+        "argv": [
+          "powershell",
+          "-NoProfile",
+          "-File",
+          "scripts/run_windows.ps1",
+          "run",
+          "--manifest",
+          "artifacts/metal_nut/fp32/model_manifest.json",
+          "--source",
+          "data/replay.json",
+          "--backend",
+          "ort-cuda",
+          "--fps",
+          "20",
+          "--loop",
+          "--duration-seconds",
+          "1800",
+          "--output",
+          "runs/soak-highres"
+        ],
+        "log": "reports/pipeline/P7-0.log",
+        "exit_code": 0,
+        "log_sha256": "d5cd52fb3f8a422b56adc7c9a2387e123ba2904bdcbdd7f2a4cb796b0aa01a93"
+      }
+    ],
+    "outputs": {
+      "artifacts/metal_nut/fp32/test_quality.json": "c900c5391e5a6bf222921bd2c9e7ade0cd1dca3eb6962dd234be2c1bb95da0d5",
+      "runs/soak-highres/summary.json": "bc1b955360e49eda55ade181b2998e8ed1853b25e87c5835c838f265186f33b2"
+    },
+    "finished_utc": "2026-09-30T09:55:15.525203+00:00"
+  },
+  "P8": {
+    "status": "passed",
+    "started_utc": "2026-10-03T07:54:01.297405+00:00",
+    "inputs": {
+      "docs/STATUS.md": "b862373c4bc1ff4eb74df26981c4e9475cf731dc86ff142990f2ae26313f8d87",
+      "docs/DECISIONS.md": "565e35c322904b1e776bb2a4aae8d985883ff8a4ea733a37dbb8315b62033b63",
+      "docs/ACCEPTANCE.md": "a330d745c86267765fd4fbec051597a3559427bcc4bd74f3dd78b8f42b9feb31",
+      "docs/REPORT.md": "e393330adb769a2e6b841f2d6c313347fba4194c058f0dcd475817598bd24259",
+      "docs/DEMO.md": "2528b3ec567ae5bc722127cb4154e32cee7ef75b68eb64bbfb92ff48ba32b8b8"
+    },
+    "commands": [
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/validate_run.py",
+          "--run",
+          "runs/soak-highres",
+          "--output",
+          "reports/soak-highres-validation.json"
+        ],
+        "log": "reports/pipeline/P8-20261003T075401297405Z-0.log",
+        "exit_code": 0,
+        "log_sha256": "a7591908872374e3bde3467ca784e108adf13a216d1035a0697f0fa7540d1096"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/summarize_memory.py"
+        ],
+        "log": "reports/pipeline/P8-20261003T075401297405Z-1.log",
+        "exit_code": 0,
+        "log_sha256": "142fc7b59979614d73e057e98adf7d947772ae460f74a083aab8725e860b7613"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/summarize_final_quality.py"
+        ],
+        "log": "reports/pipeline/P8-20261003T075401297405Z-2.log",
+        "exit_code": 0,
+        "log_sha256": "875682337bc306e6b9b8679b41063137a04f0d969088c04ba06b5bc11407efb4"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/report_failures.py"
+        ],
+        "log": "reports/pipeline/P8-20261003T075401297405Z-3.log",
+        "exit_code": 0,
+        "log_sha256": "0b39153d3d7e9db631f93a34538d748302db63c297385ea3c9b202e8485ee091"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/summarize_postprocess.py"
+        ],
+        "log": "reports/pipeline/P8-20261003T075401297405Z-4.log",
+        "exit_code": 0,
+        "log_sha256": "52173922eb0ee7ee7f8e1a37ab171621adeda77355b7ba61b7d75d37a7c482a5"
+      }
+    ],
+    "outputs": {
+      "README.md": "a95a040337b998cb4087b7018424ce5c78747387c07da8f97957bed5687a4158",
+      "docs/ACCEPTANCE.md": "a330d745c86267765fd4fbec051597a3559427bcc4bd74f3dd78b8f42b9feb31",
+      "docs/REPORT.md": "e393330adb769a2e6b841f2d6c313347fba4194c058f0dcd475817598bd24259",
+      "docs/DEMO.md": "2528b3ec567ae5bc722127cb4154e32cee7ef75b68eb64bbfb92ff48ba32b8b8",
+      "reports/soak-highres-validation.json": "c5b77a248f64734e2caaf495d05f55020e1c75a4e0511da1d11ee20e68d63942",
+      "reports/soak-highres-memory-summary.json": "134567ddad6abd7fdf0058e2dad528b982b9d40abb17121ff2d74c39b41b42ed",
+      "reports/final_quality.json": "717e8bfbc9b0578be89861c1bca455b978b0efa74874e0969cdfe4afe7211de6",
+      "reports/failure_samples.json": "e581b0b5b44b135be5299cb8a14830055b1f28c1d1ff6e7f64079f63d7a06119",
+      "reports/postprocess_ab.json": "f31c7b27e860a923d13041c8a0b827407f109dcd06ca2b63b9a5832f0fb63e8d"
+    },
+    "finished_utc": "2026-10-03T07:54:06.929599+00:00"
+  },
+  "P6": {
+    "status": "passed",
+    "inputs": {
+      "artifacts/metal_nut/fp32/model.onnx": "06155c78e0e1ab1dae61b28ab90bb90c19c2454dbc66039943897d6de2595aca",
+      "data/replay.json": "7d019d20f30f11aa30c66853d0b09a376f6911d25da388f65c0d37759f11edfb"
+    },
+    "commands": [],
+    "adopted_existing_ab_evidence": true,
+    "outputs": {
+      "reports/postprocess_ab.json": "f31c7b27e860a923d13041c8a0b827407f109dcd06ca2b63b9a5832f0fb63e8d"
+    }
+  },
+  "P5": {
+    "status": "passed",
+    "started_utc": "2026-09-30T12:06:12.063418+00:00",
+    "inputs": {
+      "artifacts/metal_nut/fp32/model.onnx": "06155c78e0e1ab1dae61b28ab90bb90c19c2454dbc66039943897d6de2595aca",
+      "reports/quantization.json": "3dccefec6296df9dab3f8c2781494b3bcb952a6c016ac02c1f751874f9420993",
+      "artifacts/metal_nut/int8_selective_2_trt_compat/model.onnx": "c82c6dccc5d9d3155d0e836d6b0688937852c222d042b488ef9bd5797c9bb3f4",
+      "runs/trt-detailed-int8_selective_2_trt_compat/model.engine": "0c03603cdeace5b091fd180071e739b05a52a3d80ca1b35e2bb213cf735f8763",
+      "reports/trt_detailed_exploratory_selective_2.json": "871ba4836e0eb39c42874c26cbf144f25a6653ac07ccbcd36c67af03b128f222",
+      "reports/trt_direct_validation_quality_selective_2.json": "af8a5964ed2bffbab1d96ca6fb61969a363a8327abf913472d6338eaf8d6d17c",
+      "tools/verify_trt_route.py": "0b905326fd4e1b94173b3c24a5d85bc7166d8a2f10e8589b2fa83715373fc0c7"
+    },
+    "commands": [
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/verify_trt_route.py"
+        ],
+        "log": "reports/pipeline/P5-20260930T120612063418Z-0.log",
+        "exit_code": 0,
+        "log_sha256": "f65927fe600ceff9e377641f7f4091903b63348dc55b1df8900359efc96cd7af"
+      }
+    ],
+    "outputs": {
+      "reports/trt_probe.json": "74ad7502d94bd704c8aa5a60487dd97559b225980c963dff81b6e15fe5648b2b",
+      "reports/trt_verified_selective_2.json": "2e27eb5e28000a9ec0ca0d0a296efabc6f7f456821c6697a7ba072c715bf7df0"
+    },
+    "finished_utc": "2026-09-30T12:06:12.384368+00:00"
+  }
+}

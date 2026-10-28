@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "run": "runs/baseline",
+  "event_count": 69,
+  "statuses": {
+    "SUCCESS": 69
+  },
+  "decisions": {
+    "REVIEW": 31,
+    "OK": 38
+  },
+  "events_sha256": "1813812f1bef17924cb7e50255ce489976280dc8281dd6d2ed88190ab76a531e",
+  "summary_sha256": "a244b0719ec886cb65d8d2b27f16170d687a17636ed44babf13e0c1f62217228",
+  "schema_sha256": "b9dabd80f15d0423c9429a4966d081a7b0fedff49b9b6da0beb4976e45d6750e",
+  "errors": []
+}

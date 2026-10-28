@@ -1,0 +1,301 @@
+{
+  "candidate": "int8_selective_2_trt_compat",
+  "model_sha256": "c82c6dccc5d9d3155d0e836d6b0688937852c222d042b488ef9bd5797c9bb3f4",
+  "derived_from_sha256": "4d34cefa689b1b6800165a519ac1cbc746e5cf0712245fe953a7a857674ff107",
+  "engine_sha256": "0c03603cdeace5b091fd180071e739b05a52a3d80ca1b35e2bb213cf735f8763",
+  "layer_export_sha256": "0a3bdcd6766ccf86d2ecb0aab5696341579034e6f2988de1f564cbf619f7dcc9",
+  "runtime_profile_sha256": "5b6264497e782a799dd7129c079bd1b27861a6736b4a645059de4d286769a904",
+  "output_sha256": "20332dda3564aa963fbd23b1f7e96264529315a8339fc2053145b117e7e70a8c",
+  "int8_compute_layer_count": 20,
+  "int8_compute_layers": [
+    {
+      "name": "model.teacher.conv1.weight_quantized + /model/teacher/conv1/Conv + PWN(/model/teacher/Relu)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize96x128x64_stage3_warpsize2x2x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.109568
+    },
+    {
+      "name": "model.teacher.conv2.weight_quantized + /model/teacher/conv2/Conv + PWN(/model/teacher/Relu_1)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize96x64x64_stage3_warpsize2x2x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.165888
+    },
+    {
+      "name": "model.ae.encoder.enconv1.weight_quantized + /model/ae/encoder/enconv1/Conv",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_indexed_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.024576
+    },
+    {
+      "name": "model.ae.encoder.enconv2.weight_quantized + /model/ae/encoder/enconv2/Conv + PWN(/model/ae/encoder/Relu_1)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm75_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize64x64x64_stage1_warpsize2x2x1_g1_tensor8x8x16",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.011264
+    },
+    {
+      "name": "model.ae.encoder.enconv3.weight_quantized + /model/ae/encoder/enconv3/Conv + PWN(/model/ae/encoder/Relu_2)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize32x32x64_stage6_warpsize2x1x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.007168
+    },
+    {
+      "name": "model.ae.encoder.enconv4.weight_quantized + /model/ae/encoder/enconv4/Conv + PWN(/model/ae/encoder/Relu_3)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize64x128x64_stage6_warpsize2x2x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.010272
+    },
+    {
+      "name": "model.ae.encoder.enconv5.weight_quantized + /model/ae/encoder/enconv5/Conv + PWN(/model/ae/encoder/Relu_4)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize32x96x64_stage5_warpsize2x1x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.039904
+    },
+    {
+      "name": "model.ae.encoder.enconv6.weight_quantized + /model/ae/encoder/enconv6/Conv",
+      "layer_type": "CaskFlattenConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize32x64x64_stage6_warpsize2x2x1_g1_tensor16x8x32_t1r1s1",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.011264
+    },
+    {
+      "name": "model.ae.decoder.deconv1.weight_quantized + /model/ae/decoder/deconv1/Conv + PWN(/model/ae/decoder/Relu)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_indexed_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize32x32x64_stage6_warpsize2x1x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.008192
+    },
+    {
+      "name": "model.ae.decoder.deconv2.weight_quantized + /model/ae/decoder/deconv2/Conv + PWN(/model/ae/decoder/Relu_1)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x32x64_stage4_warpsize4x1x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.051584
+    },
+    {
+      "name": "model.ae.decoder.deconv3.weight_quantized + /model/ae/decoder/deconv3/Conv + PWN(/model/ae/decoder/Relu_2)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize32x32x64_stage6_warpsize2x1x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.026624
+    },
+    {
+      "name": "model.ae.decoder.deconv4.weight_quantized + /model/ae/decoder/deconv4/Conv + PWN(/model/ae/decoder/Relu_3)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_indexed_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize32x32x64_stage6_warpsize2x1x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.031744
+    },
+    {
+      "name": "model.ae.decoder.deconv5.weight_quantized + /model/ae/decoder/deconv5/Conv + PWN(/model/ae/decoder/Relu_4)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize96x64x64_stage3_warpsize2x2x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.03584
+    },
+    {
+      "name": "model.ae.decoder.deconv6.weight_quantized + /model/ae/decoder/deconv6/Conv + PWN(/model/ae/decoder/Relu_5)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize192x64x64_stage3_warpsize4x1x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.03072
+    },
+    {
+      "name": "model.ae.decoder.deconv7.weight_quantized + /model/ae/decoder/deconv7/Conv + PWN(/model/ae/decoder/Relu_6)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize256x64x64_stage4_warpsize4x1x1_g1_tensor16x8x32_t1r3s3",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.037888
+    },
+    {
+      "name": "model.student.conv1.weight_quantized + /model/student/conv1/Conv + PWN(/model/student/Relu)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize96x128x64_stage3_warpsize2x2x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.09728
+    },
+    {
+      "name": "model.student.conv2.weight_quantized + /model/student/conv2/Conv + PWN(/model/student/Relu_1)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize96x64x64_stage3_warpsize2x2x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.165888
+    },
+    {
+      "name": "model.student.conv3.weight_quantized + /model/student/conv3/Conv + PWN(/model/student/Relu_2)",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize96x64x64_stage3_warpsize2x2x1_g1_tensor16x8x32_t1r3s3",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.052224
+    },
+    {
+      "name": "model.student.conv4.weight_quantized + /model/student/conv4/Conv",
+      "layer_type": "CaskConvolution",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8"
+      ],
+      "output_formats": [
+        "Int8"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x96x64_stage3_warpsize4x1x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.208896
+    },
+    {
+      "name": "model.ae.decoder.deconv8.weight_quantized + /model/ae/decoder/deconv8/Conv + PWN(/model/Sub_2, PWN(/model/Constant_9_output_0 + ONNXTRT_Broadcast_534, /model/Pow_1))",
+      "layer_type": "CaskJitConv",
+      "weights_type": "Int8",
+      "input_formats": [
+        "Int8",
+        "Int8"
+      ],
+      "output_formats": [
+        "Float"
+      ],
+      "tactic": "sm80_xmma_fprop_implicit_gemm_interleaved_i8i8_i8i32_f32_nchw_vect_c_32kcrs_vect_c_32_nchw_vect_c_32_tilesize128x128x64_stage4_warpsize2x2x1_g1_tensor16x8x32",
+      "runtime_profile_matched": true,
+      "runtime_time_ms": 0.036864
+    }
+  ],
+  "int8_execution_verified_for_derived_engine": true,
+  "reference_validation_image": "data/raw/metal_nut/test/bent/005.png",
+  "trt_vs_ort_max_abs": 0.02285677194595337,
+  "trt_vs_ort_score_abs": 0.01754581928253174,
+  "trt_vs_ort_allclose_atol_1e_5_rtol_1e_4": false,
+  "quality_accepted": false,
+  "final_test_used_for_derived_engine": false,
+  "note": "This is an exploratory graph rewrite and direct TensorRT engine, not the frozen C++ ORT CUDA target."
+}

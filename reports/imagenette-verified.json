@@ -1,0 +1,7 @@
+{
+  "name": "imagenette2.tgz",
+  "source": "https://s3.amazonaws.com/fast-ai-imageclas/imagenette2.tgz",
+  "sha256": "6cbfac238434d89fe99e651496f0812ebc7a10fa62bd42d6874042bf01de4efd",
+  "expected_sha256": "6cbfac238434d89fe99e651496f0812ebc7a10fa62bd42d6874042bf01de4efd",
+  "status": "passed"
+}

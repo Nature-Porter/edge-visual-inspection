@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "model_id": "SYNTHETIC_CONV_NOT_EFFICIENTAD",
+  "category": "metal_nut",
+  "checkpoint_sha256": "ecca31415e1ed39e34ec8f8a7a444a9d0da489b628600d6ef11277392f8b44e5",
+  "onnx_path": "model.onnx",
+  "onnx_sha256": "ecca31415e1ed39e34ec8f8a7a444a9d0da489b628600d6ef11277392f8b44e5",
+  "input": {
+    "name": "image",
+    "shape": [
+      1,
+      3,
+      256,
+      256
+    ],
+    "dtype": "float32",
+    "color": "RGB",
+    "layout": "NCHW",
+    "range": [
+      0,
+      1
+    ]
+  },
+  "output": {
+    "name": "raw_anomaly_map",
+    "shape": [
+      1,
+      1,
+      256,
+      256
+    ],
+    "dtype": "float32"
+  },
+  "resize": "opencv_inter_linear",
+  "preprocess_owner": "external",
+  "normalization_owner": "model",
+  "score_reduction": "max",
+  "status": "uncalibrated",
+  "image_threshold": null,
+  "pixel_threshold": 0.5,
+  "validation_manifest_sha256": null,
+  "training_manifest_sha256": "dcec12c71b9aa4a8f18aabb238bb6eea49621b4b87a21308ecccdd6ff944fff4",
+  "stats_manifest_sha256": "dcec12c71b9aa4a8f18aabb238bb6eea49621b4b87a21308ecccdd6ff944fff4",
+  "requested_precision": "FP32",
+  "tools": {
+    "generator": "make_fixture.py"
+  },
+  "smoke": true,
+  "fixture": true,
+  "fixture_note": "Synthetic Conv has no ImageNet normalization; production contract fields used solely to exercise parser."
+}

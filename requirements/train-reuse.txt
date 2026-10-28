@@ -1,0 +1,11 @@
+# Read-only system packages from D:/anaconda/envs/py312, shadow additions only in .venv-train.
+torch==2.4.1+cu124
+torchvision==0.19.1+cu124
+anomalib[clip]==2.1.0
+lightning==2.5.1
+torchmetrics==1.7.1
+opencv-python==4.11.0.86
+onnx==1.18.0
+onnxruntime-gpu==1.22.0
+PyYAML==6.0.2
+jsonschema==4.23.0

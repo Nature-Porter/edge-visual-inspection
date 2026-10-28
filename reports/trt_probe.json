@@ -1,0 +1,95 @@
+{
+  "status": "blocked",
+  "ort_version": "1.22.0",
+  "requested_combination": "ORT 1.22 / TRT 10.9 / CUDA12",
+  "dlls": [
+    "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\lib\\nvinfer_10.dll",
+    "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\lib\\nvinfer_builder_resource_10.dll",
+    "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\lib\\nvinfer_dispatch_10.dll",
+    "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\lib\\nvinfer_lean_10.dll",
+    "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\lib\\nvinfer_plugin_10.dll",
+    "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\lib\\nvinfer_vc_plugin_10.dll"
+  ],
+  "official_source": "https://onnxruntime.ai/docs/execution-providers/TensorRT-ExecutionProvider.html",
+  "int8_execution_verified": false,
+  "reason": "Conv TRT provider verified; target QDQ engine layer precision and validation quality still required.",
+  "target_directory": "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34",
+  "cold_session_seconds": 16.422317899996415,
+  "profile": "D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-probe-1790740094384525200\\profile_2026-09-30_11-48-14.json",
+  "profile_sha256": "6ef77b117692a0169afa4147532d8233dd88e835fbb2ec1941131a8849498104",
+  "model_sha256": "ecca31415e1ed39e34ec8f8a7a444a9d0da489b628600d6ef11277392f8b44e5",
+  "nodes": [
+    {
+      "parameter_size": "0",
+      "provider": "TensorrtExecutionProvider",
+      "op_name": "TRTKernel_graph_SYNTHETIC_SOFTWARE_TEST_ONLY_11238119540706901583_0",
+      "input_type_shape": [
+        {
+          "float": [
+            1,
+            3,
+            256,
+            256
+          ]
+        }
+      ],
+      "node_index": "1",
+      "output_type_shape": [
+        {
+          "float": [
+            1,
+            1,
+            256,
+            256
+          ]
+        }
+      ],
+      "activation_size": "786432",
+      "output_size": "262144",
+      "thread_scheduling_stats": {
+        "main_thread": {
+          "thread_pool_name": "session-1-intra-op",
+          "thread_id": "39792",
+          "block_size": [],
+          "core": -1,
+          "Distribution": 0,
+          "DistributionEnqueue": 0,
+          "Run": 0,
+          "Wait": 0,
+          "WaitRevoke": 0
+        },
+        "sub_threads": {
+          "2152": {
+            "num_run": 0,
+            "core": -1
+          },
+          "31120": {
+            "num_run": 0,
+            "core": -1
+          },
+          "40628": {
+            "num_run": 0,
+            "core": -1
+          },
+          "20760": {
+            "num_run": 0,
+            "core": -1
+          },
+          "29596": {
+            "num_run": 0,
+            "core": -1
+          },
+          "23560": {
+            "num_run": 0,
+            "core": -1
+          },
+          "9684": {
+            "num_run": 0,
+            "core": -1
+          }
+        }
+      }
+    }
+  ],
+  "conv_provider_verified": true
+}

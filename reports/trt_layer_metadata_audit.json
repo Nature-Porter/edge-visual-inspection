@@ -1,0 +1,18 @@
+{
+  "model_sha256": "ec12497899f33f8305a19c8c7cbc795ee24f96cd7f8b074a36d20aac4a2098f7",
+  "evidence_file": "D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-int8-int8_percentile-1790742605880993600\\evidence.json",
+  "evidence_sha256": "dd755ca6f69d06e44a98688801f9b8f300478103dce4991d5461b8725c823cc7",
+  "engine_files": [
+    {
+      "path": "D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-int8-int8_percentile-1790742605880993600\\engine_cache\\TensorrtExecutionProvider_TRTKernel_graph_main_graph_3338063060099049220_0_0_sm89.engine",
+      "sha256": "d1f9033ef793ac6cc7afea9f329e14ac60f867b8e4e7d3fe7bdb283edff73447"
+    }
+  ],
+  "layer_export": "D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-int8-int8_percentile-1790742605880993600\\trt_layers.json",
+  "layer_export_sha256": "25c61dcf5c8497d5a1a506c98700449dcdf1174fd5d9e552254b2d6fa38e4fa9",
+  "layer_count": 61,
+  "structured_layer_count": 0,
+  "layers_with_precision_count": 0,
+  "int8_execution_verified": false,
+  "reason": "cached engine layer export has no per-layer precision metadata"
+}

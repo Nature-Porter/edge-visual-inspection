@@ -1,0 +1,7 @@
+{
+  "run_dir": "D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-int8-int8_percentile-1790742605880993600",
+  "evidence_sha256": "dd755ca6f69d06e44a98688801f9b8f300478103dce4991d5461b8725c823cc7",
+  "status": "blocked",
+  "int8_execution_verified": false,
+  "reason": "TRT engine has no reported INT8 layer"
+}

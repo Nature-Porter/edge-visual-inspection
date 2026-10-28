@@ -1,0 +1,31 @@
+{
+  "status": "passed_validation_experiment",
+  "model_sha256": "c82c6dccc5d9d3155d0e836d6b0688937852c222d042b488ef9bd5797c9bb3f4",
+  "source_model_sha256": "4d34cefa689b1b6800165a519ac1cbc746e5cf0712245fe953a7a857674ff107",
+  "engine_sha256": "0c03603cdeace5b091fd180071e739b05a52a3d80ca1b35e2bb213cf735f8763",
+  "validation_sha256": "650fecb79f57619cf23172f64cb61687a224c66c4d8f6c980a5a3fa14939bc1f",
+  "int8_execution_verified": true,
+  "int8_conv_layer_count": 20,
+  "int8_layer_evidence": "reports/trt_detailed_exploratory_selective_2.json",
+  "validation_quality_pass": true,
+  "validation_quality_evidence": "reports/trt_direct_validation_quality_selective_2.json",
+  "source_ort_trt_cpu_fallback": [
+    {
+      "provider": "CPUExecutionProvider",
+      "operator": "DequantizeLinear",
+      "events": 1380
+    }
+  ],
+  "direct_engine_cpu_ep_fallback": 0,
+  "cold_engine_build_seconds": 51.589,
+  "hot_engine_deserialize_seconds": 0.0614979,
+  "final_test_used": false,
+  "cpp_trt_integration_verified": false,
+  "engine_only_speedup_verified": true,
+  "full_cpp_pipeline_speedup_verified": false,
+  "engine_only_benchmark": "reports/trt_engine_benchmark_with_transfers.json",
+  "engine_only_speedup_fp32_over_int8": 2.9123552568727247,
+  "engine_iteration_latency_speedup_fp32_over_int8": 2.854051656850919,
+  "benchmark_fp32_tf32_policy": "TensorRT default permits TF32; --noTF32 was not passed",
+  "scope": "independent TensorRT engine experiment; C++ production detector remains ORT CUDA"
+}

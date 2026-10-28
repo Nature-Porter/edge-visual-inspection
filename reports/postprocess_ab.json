@@ -1,0 +1,107 @@
+{
+  "model_sha256": "06155c78e0e1ab1dae61b28ab90bb90c19c2454dbc66039943897d6de2595aca",
+  "validation_replay_sha256": "7d019d20f30f11aa30c66853d0b09a376f6911d25da388f65c0d37759f11edfb",
+  "three_rounds": {
+    "cpu": {
+      "runs": [
+        {
+          "summary": "runs\\bench-pipeline-cpu-1\\summary.json",
+          "sha256": "bdddd150aeb28e0c021f4d46f357f60c6227485bc4c36e4cb49e9679fcc29889",
+          "wall_p50_ms": 13.1451,
+          "wall_p95_ms": 13.5704,
+          "gpu_p50_ms": 12.410112380981445,
+          "post_p50_ms": 0.2412
+        },
+        {
+          "summary": "runs\\bench-pipeline-cpu-2\\summary.json",
+          "sha256": "71288aed15e3c3e7f4b9da058ceff37422e975186ca85a1ad1190a8142746460",
+          "wall_p50_ms": 13.2163,
+          "wall_p95_ms": 13.6349,
+          "gpu_p50_ms": 12.47439956665039,
+          "post_p50_ms": 0.2446
+        },
+        {
+          "summary": "runs\\bench-pipeline-cpu-3\\summary.json",
+          "sha256": "36d2d7c85286af7f84161bb92e57a26396c744739f6fdc99e65dad7db9295a43",
+          "wall_p50_ms": 13.294,
+          "wall_p95_ms": 13.7148,
+          "gpu_p50_ms": 12.546976089477539,
+          "post_p50_ms": 0.2475
+        }
+      ],
+      "median_wall_p50_ms": 13.2163,
+      "median_post_p50_ms": 0.2446
+    },
+    "cuda": {
+      "runs": [
+        {
+          "summary": "runs\\bench-pipeline-cuda-1\\summary.json",
+          "sha256": "e96b35964a6ddbf01397c9344bc742cf6becca809dff33e1ec2b496bd7ce68f0",
+          "wall_p50_ms": 13.2221,
+          "wall_p95_ms": 13.7085,
+          "gpu_p50_ms": 12.66659164428711,
+          "post_p50_ms": 0.0506879985332489
+        },
+        {
+          "summary": "runs\\bench-pipeline-cuda-2\\summary.json",
+          "sha256": "e5fb0edfcbd04120b37a3a07d584cc6a30ac3a0af2b383c93b20f8a19f056a12",
+          "wall_p50_ms": 13.3254,
+          "wall_p95_ms": 13.9017,
+          "gpu_p50_ms": 12.751872062683105,
+          "post_p50_ms": 0.05238400027155876
+        },
+        {
+          "summary": "runs\\bench-pipeline-cuda-3\\summary.json",
+          "sha256": "2f8b21c588d440a273e1ea7f40a888543be369f011f340f654675431546ea4e6",
+          "wall_p50_ms": 13.4326,
+          "wall_p95_ms": 14.1544,
+          "gpu_p50_ms": 12.880096435546875,
+          "post_p50_ms": 0.047359999269247055
+        }
+      ],
+      "median_wall_p50_ms": 13.3254,
+      "median_post_p50_ms": 0.0506879985332489
+    }
+  },
+  "interleaved": [
+    {
+      "postprocess": "cuda",
+      "summary": "runs\\bench-interleaved-1-cuda\\summary.json",
+      "wall_p50_ms": 13.1002,
+      "gpu_p50_ms": 12.551839828491211,
+      "post_p50_ms": 0.05104000121355057
+    },
+    {
+      "postprocess": "cpu",
+      "summary": "runs\\bench-interleaved-2-cpu\\summary.json",
+      "wall_p50_ms": 13.3912,
+      "gpu_p50_ms": 12.633472442626953,
+      "post_p50_ms": 0.2501
+    },
+    {
+      "postprocess": "cuda",
+      "summary": "runs\\bench-interleaved-3-cuda\\summary.json",
+      "wall_p50_ms": 13.2984,
+      "gpu_p50_ms": 12.741215705871582,
+      "post_p50_ms": 0.05049600079655647
+    },
+    {
+      "postprocess": "cpu",
+      "summary": "runs\\bench-interleaved-4-cpu\\summary.json",
+      "wall_p50_ms": 13.64,
+      "gpu_p50_ms": 12.873824119567871,
+      "post_p50_ms": 0.2549
+    }
+  ],
+  "score_comparison": {
+    "n": 69,
+    "max_abs": 0.0,
+    "same_status_decision": 69
+  },
+  "temperature_observations": [
+    "reports/benchmark-gpu-before.txt",
+    "reports/benchmark-gpu-after.txt",
+    "reports/benchmark-gpu-interleaved-after.txt"
+  ],
+  "interpretation": "CUDA kernel reduces postprocess time. Whole-pipeline benefit is small and varies with GPU model time and temperature; do not attribute all wall-time differences to the kernel."
+}

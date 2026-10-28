@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "errors": [],
+  "benchmark_sha256": "217523a739388674aaecec4c90677f432cf346f93346fdf673e2bb45d50d8bb6",
+  "fp32_quality_sha256": "98e2d58c45e9db0e2e88f75f99bf67a0c0ea400efc517f083befce2efa2952e3",
+  "int8_quality_sha256": "4e6b63002fd686174857d81399cb8e73149c5f434a95ec908ae4492c31e28355",
+  "cpp_pipeline_wall_ratio_fp32_over_int8": 2.618824785653717,
+  "cpp_model_gpu_ratio_fp32_over_int8": 2.8553928559224935,
+  "fp32_comparator_quality_pass": false,
+  "int8_validation_quality_pass": true,
+  "both_routes_quality_pass": false,
+  "decision_latency_speedup_claim": false,
+  "scope": "C++ benchmark pipeline without scheduler or decode; FP32 TensorRT comparator fails frozen FNR gate"
+}

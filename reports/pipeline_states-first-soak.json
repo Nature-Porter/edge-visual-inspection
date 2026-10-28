@@ -1,0 +1,406 @@
+{
+  "P0": {
+    "status": "passed",
+    "started_utc": "2026-09-30T04:15:58.882551+00:00",
+    "inputs": {
+      "CMakeLists.txt": "1ea973405166aaad58be3b56e641dabd59edc43bce7b71ca5cc5edc4fe93b913",
+      "scripts/build_windows.ps1": "a45528ca103bdb00d3edd37bb8a0c4a9378387247a95a53d31d65f374cae9914"
+    },
+    "commands": [
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/environment.py",
+          "--output",
+          "reports/environment-current.json"
+        ],
+        "log": "reports/pipeline/P0-0.log",
+        "exit_code": 0,
+        "log_sha256": "5783c287146dfd296c8b97b969d7c68f5924d4bea5311290cd364247824f0cf3"
+      },
+      {
+        "argv": [
+          "powershell",
+          "-NoProfile",
+          "-File",
+          "scripts/build_windows.ps1"
+        ],
+        "log": "reports/pipeline/P0-1.log",
+        "exit_code": 0,
+        "log_sha256": "e5fe483d66f76e12d1e5cbc7d9ef9e40d45e747217a6d57e0771d7857d976f5c"
+      },
+      {
+        "argv": [
+          "powershell",
+          "-NoProfile",
+          "-File",
+          "scripts/probe_cuda.ps1"
+        ],
+        "log": "reports/pipeline/P0-2.log",
+        "exit_code": 0,
+        "log_sha256": "2764efbd1bfd8fd7461c64ff7608046d43f72408391697172adfa5f3fb2bf847"
+      }
+    ],
+    "outputs": {
+      "build/inspection.exe": "a8c56bed470f9f62a0b0bd27a02fe682d115df8ff0e43741dd725736350d11af",
+      "reports/environment-current.json": "02bbeaab5fb3a93f89f1fa67b77b432e6957fe9f77fe5d8f552433125813c05c"
+    },
+    "finished_utc": "2026-09-30T04:16:48.947354+00:00"
+  },
+  "P1": {
+    "status": "passed",
+    "inputs": {
+      "configs/metal_nut.yaml": "fa6f1dc37dab9219bd1af364f4824703f11d4cae0e514c3fe750ebf156eb88ed",
+      "tools/prepare_data.py": "bed06cc5d532800cd27b0dee57d7fa4e0857f4c6c08b8d127950e0260c31fc25",
+      "tools/train.py": "900437a6464859307afcb9cabb14b3275cae4348e54734957eb7c39890c8f2b0",
+      "data/raw/imagenette2.tgz": "6cbfac238434d89fe99e651496f0812ebc7a10fa62bd42d6874042bf01de4efd",
+      "data/train_normal.json": "b71853178dfb727ebfb7606e43b4fa87beb7f62da2a8391e5a5e5736e2805f39",
+      "data/stats_normal.json": "80b04df6a24a835b9c18135bfab6c4414da5ee15076ee16e7a9b6f3d51977d8b"
+    },
+    "commands": [],
+    "adopted_existing_training": true,
+    "outputs": {
+      "artifacts/metal_nut/training/model.ckpt": "bf15f84a0f2e267a28fe9a43d98518c9795c88fe83471a149083079140fdf7a4",
+      "artifacts/metal_nut/training/training.json": "b7d5a51f5c976e34d261b6b53bfb1b0e499ad00dcf0c3e94410de79c0691c01b"
+    }
+  },
+  "P2": {
+    "status": "passed",
+    "started_utc": "2026-09-30T04:17:59.286524+00:00",
+    "inputs": {
+      "configs/metal_nut.yaml": "fa6f1dc37dab9219bd1af364f4824703f11d4cae0e514c3fe750ebf156eb88ed",
+      "tools/export_onnx.py": "f58f1fcd7abc6e66b3d9bc91d13672fa5825531a75acaf987654ddf9a153ba6b",
+      "artifacts/metal_nut/training/model.ckpt": "bf15f84a0f2e267a28fe9a43d98518c9795c88fe83471a149083079140fdf7a4",
+      "data/validation.json": "650fecb79f57619cf23172f64cb61687a224c66c4d8f6c980a5a3fa14939bc1f"
+    },
+    "commands": [
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-train\\Scripts\\python.exe",
+          "tools/export_onnx.py",
+          "--config",
+          "configs/metal_nut.yaml"
+        ],
+        "log": "reports/pipeline/P2-0.log",
+        "exit_code": 0,
+        "log_sha256": "37179576c1c7172bb0eb76228afd95b57192d9f21cbb71e467608a2a24b98d7f"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-train\\Scripts\\python.exe",
+          "tools/verify_alignment.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--cpp"
+        ],
+        "log": "reports/pipeline/P2-1.log",
+        "exit_code": 0,
+        "log_sha256": "eb902158ebbe173b1fdda502c9340cf7573c9398a207d8e56193fc1169660ae9"
+      }
+    ],
+    "outputs": {
+      "artifacts/metal_nut/fp32/model.onnx": "06155c78e0e1ab1dae61b28ab90bb90c19c2454dbc66039943897d6de2595aca",
+      "artifacts/metal_nut/fp32/model_manifest.json": "6dbbc19cdeffcb245f8a5cd0920e2d2fd6c83dcaaae0d9fdd7e44eba10acb650",
+      "reports/alignment.json": "abe8a4e6b1d1cba3bd7c9c40645e6f6a883fb2b43b9e1b350d948e8c058fa994"
+    },
+    "finished_utc": "2026-09-30T04:19:36.988224+00:00"
+  },
+  "P3": {
+    "status": "passed",
+    "started_utc": "2026-09-30T04:20:05.303488+00:00",
+    "inputs": {
+      "artifacts/metal_nut/fp32/model_manifest.json": "6dbbc19cdeffcb245f8a5cd0920e2d2fd6c83dcaaae0d9fdd7e44eba10acb650",
+      "data/replay.json": "7d019d20f30f11aa30c66853d0b09a376f6911d25da388f65c0d37759f11edfb"
+    },
+    "commands": [
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation"
+        ],
+        "log": "reports/pipeline/P3-0.log",
+        "exit_code": 0,
+        "log_sha256": "311ce168201934f64c18f758919330f240a58a4c45331f1380b3196bfdbb79a1"
+      },
+      {
+        "argv": [
+          "powershell",
+          "-NoProfile",
+          "-File",
+          "scripts/run_windows.ps1",
+          "run",
+          "--manifest",
+          "artifacts/metal_nut/fp32/model_manifest.json",
+          "--source",
+          "data/replay.json",
+          "--backend",
+          "ort-cuda",
+          "--fps",
+          "20",
+          "--output",
+          "runs/baseline"
+        ],
+        "log": "reports/pipeline/P3-1.log",
+        "exit_code": 0,
+        "log_sha256": "60f77b9e5257cb1a228d59ad765e0923c3ebf451afb877714e11b4b12591888f"
+      }
+    ],
+    "outputs": {
+      "artifacts/metal_nut/fp32/validation_quality.json": "82b3cca8b3d48438fcddefb5fe0a2e9d3a7cba7ef61a90cdabc34d128f6701fb",
+      "runs/baseline/summary.json": "a244b0719ec886cb65d8d2b27f16170d687a17636ed44babf13e0c1f62217228"
+    },
+    "finished_utc": "2026-09-30T04:20:15.042167+00:00"
+  },
+  "P4": {
+    "status": "passed",
+    "started_utc": "2026-09-30T04:26:11.637052+00:00",
+    "inputs": {
+      "artifacts/metal_nut/fp32/model.onnx": "06155c78e0e1ab1dae61b28ab90bb90c19c2454dbc66039943897d6de2595aca",
+      "data/calibration.json": "0ac2b6d4ce5b2c75f616042aabf57e05e200cfe2ccdcf236b2b9087cce19340c",
+      "data/validation.json": "650fecb79f57619cf23172f64cb61687a224c66c4d8f6c980a5a3fa14939bc1f"
+    },
+    "commands": [
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/activation_diagnostics.py"
+        ],
+        "log": "reports/pipeline/P4-0.log",
+        "exit_code": 0,
+        "log_sha256": "297ec338e9ec3ba40f5a70e005765053659f446daa24fdd0f9923086f19be03f"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/quantize.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--phase",
+          "selective"
+        ],
+        "log": "reports/pipeline/P4-1.log",
+        "exit_code": 0,
+        "log_sha256": "e4a7abd5b15bb71a790fa58de65f5722f468e8f374a5bfc3ca256fa4a5d346fc"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--manifest",
+          "artifacts/metal_nut/fp16/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P4-2.log",
+        "exit_code": 0,
+        "log_sha256": "f18f1710371b6686dc381f7cee9536646c6d567c6d2389917662f134a130d01c"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--manifest",
+          "artifacts/metal_nut/int8_minmax/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P4-3.log",
+        "exit_code": 0,
+        "log_sha256": "aaa701422a1a5d8039398ad79acb452d38935e3cf392e5d92d869ae781db9616"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--manifest",
+          "artifacts/metal_nut/int8_percentile/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P4-4.log",
+        "exit_code": 0,
+        "log_sha256": "2d23ad8dcde2f4e6a767def3a3fec3e06132909c26fc28081d28c7f8041d13f6"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--manifest",
+          "artifacts/metal_nut/int8_selective_1/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P4-5.log",
+        "exit_code": 0,
+        "log_sha256": "c39a8a5733c0acdc57db7480238048ce8d3ad1347572eaef5984ee560924a763"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--manifest",
+          "artifacts/metal_nut/int8_selective_2/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P4-6.log",
+        "exit_code": 0,
+        "log_sha256": "9f868bf5a1f350f286ea22535c5abe3198f5bb4dac0e1a03f95f82d1ecc1c5d2"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "validation",
+          "--manifest",
+          "artifacts/metal_nut/int8_selective_3/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P4-7.log",
+        "exit_code": 0,
+        "log_sha256": "7c160240229ae7f36193b64246219aab9c14c02de656b47a6bef102da6a055c7"
+      }
+    ],
+    "outputs": {
+      "reports/quantization.json": "3dccefec6296df9dab3f8c2781494b3bcb952a6c016ac02c1f751874f9420993"
+    },
+    "finished_utc": "2026-09-30T04:28:01.048807+00:00"
+  },
+  "P7": {
+    "status": "failed",
+    "started_utc": "2026-09-30T08:50:33.075862+00:00",
+    "inputs": {
+      "configs/metal_nut.yaml": "fa6f1dc37dab9219bd1af364f4824703f11d4cae0e514c3fe750ebf156eb88ed",
+      "artifacts/metal_nut/fp32/validation_quality.json": "82b3cca8b3d48438fcddefb5fe0a2e9d3a7cba7ef61a90cdabc34d128f6701fb",
+      "reports/quantization.json": "3dccefec6296df9dab3f8c2781494b3bcb952a6c016ac02c1f751874f9420993",
+      "data/test.json": "bd2687fe0e1aefc00e7badd759252810ab604404d220d7b2e8c46f81a4194aed",
+      "data/replay.json": "7d019d20f30f11aa30c66853d0b09a376f6911d25da388f65c0d37759f11edfb"
+    },
+    "commands": [
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "test",
+          "--manifest",
+          "artifacts/metal_nut/fp16/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P7-0.log",
+        "exit_code": 0,
+        "log_sha256": "24449c6784b58a6c19af06e4b70277f4137387d50ca4c7503a3f29086ca48194"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "test",
+          "--manifest",
+          "artifacts/metal_nut/fp32/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P7-1.log",
+        "exit_code": 0,
+        "log_sha256": "68a0fbd37b537e1388b290ab40ff448b375fd9009341c2e6f8bc8bddf044c03a"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "test",
+          "--manifest",
+          "artifacts/metal_nut/int8_percentile/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P7-2.log",
+        "exit_code": 0,
+        "log_sha256": "50c098a69163db44c89f9a6ca7ae3427e7ad4d8f6d941c0634c2a9e5facf5525"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "test",
+          "--manifest",
+          "artifacts/metal_nut/int8_selective_2/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P7-3.log",
+        "exit_code": 0,
+        "log_sha256": "f4b6d3edf75325c9e7d34d2eb48c1cc6d202f4f2b23f7056daa5c98e1a9ed55d"
+      },
+      {
+        "argv": [
+          "D:\\Pythonproject\\C++\\edge-visual-inspection\\.venv-tools\\Scripts\\python.exe",
+          "tools/evaluate.py",
+          "--config",
+          "configs/metal_nut.yaml",
+          "--split",
+          "test",
+          "--manifest",
+          "artifacts/metal_nut/int8_selective_3/model_manifest.json"
+        ],
+        "log": "reports/pipeline/P7-4.log",
+        "exit_code": 0,
+        "log_sha256": "788a42fb3a6c6ca89bc792db6d4693e5ba79ce39e0ee5892ea1082f656ece3ef"
+      },
+      {
+        "argv": [
+          "powershell",
+          "-NoProfile",
+          "-File",
+          "scripts/run_windows.ps1",
+          "run",
+          "--manifest",
+          "artifacts/metal_nut/fp32/model_manifest.json",
+          "--source",
+          "data/replay.json",
+          "--backend",
+          "ort-cuda",
+          "--fps",
+          "20",
+          "--loop",
+          "--duration-seconds",
+          "1800",
+          "--output",
+          "runs/soak"
+        ],
+        "log": "reports/pipeline/P7-5.log",
+        "exit_code": 0,
+        "log_sha256": "83e77c03071be0e0cb7dc63c255258bfe374aa5faa8c7a9b9a6d60bdff030703"
+      }
+    ],
+    "outputs": {
+      "artifacts/metal_nut/fp32/test_quality.json": "c900c5391e5a6bf222921bd2c9e7ade0cd1dca3eb6962dd234be2c1bb95da0d5",
+      "runs/soak/summary.json": "6caecc988e2f060183b35eaa132c4dfb6813f383ea33c51807e5d10415f772c3"
+    },
+    "reason": "final test or soak acceptance failed: ",
+    "finished_utc": "2026-09-30T09:21:01.024558+00:00"
+  }
+}

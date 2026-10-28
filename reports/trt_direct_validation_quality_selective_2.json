@@ -1,0 +1,1419 @@
+{
+  "candidate": "int8_selective_2_trt_compat",
+  "model_sha256": "c82c6dccc5d9d3155d0e836d6b0688937852c222d042b488ef9bd5797c9bb3f4",
+  "source_model_sha256": "4d34cefa689b1b6800165a519ac1cbc746e5cf0712245fe953a7a857674ff107",
+  "engine_sha256": "0c03603cdeace5b091fd180071e739b05a52a3d80ca1b35e2bb213cf735f8763",
+  "int8_layer_evidence": "reports/trt_detailed_exploratory_selective_2.json",
+  "data_sha256": "650fecb79f57619cf23172f64cb61687a224c66c4d8f6c980a5a3fa14939bc1f",
+  "coverage": {
+    "expected": 69,
+    "received": 69,
+    "valid": 69,
+    "ERROR": 0,
+    "coverage": 1.0,
+    "error_ids": []
+  },
+  "metrics": {
+    "n": 69,
+    "TP": 29,
+    "FP": 2,
+    "TN": 38,
+    "FN": 0,
+    "FNR": 0.0,
+    "FPR": 0.05,
+    "AUROC": 0.9775862068965517,
+    "AP": 0.9607555572390529,
+    "AP_definition": "sklearn non-interpolated average precision",
+    "undefined_reason": null,
+    "image_threshold": 0.4560212194919586
+  },
+  "validation_quality_gate_pass": true,
+  "max_score_abs_vs_source_ort_cuda": 0.01754581928253174,
+  "frozen_threshold": 0.4560212194919586,
+  "threshold_recalibrated": false,
+  "final_test_used": false,
+  "raw_dir": "runs\\trt-detailed-int8_selective_2_trt_compat\\validation",
+  "predictions": [
+    {
+      "source_image_id": "9d9b3f4d6c692d68351dd95cd053afeef8892cd3b17e758eca6cccfaf8b044e1",
+      "source_sha256": "9d9b3f4d6c692d68351dd95cd053afeef8892cd3b17e758eca6cccfaf8b044e1",
+      "input_sha256": "f0c81d52a0e8f25245b603b0c0f0248b50c592be20afb0501e358cc29d397e28",
+      "log_sha256": "7b2fa74d871794bad56d8ca4eb881a810770cd37696bc1068d46f7aa4aa99a28",
+      "output_sha256": "20332dda3564aa963fbd23b1f7e96264529315a8339fc2053145b117e7e70a8c",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/000-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\000-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 1.0282100439071655
+    },
+    {
+      "source_image_id": "31befe0b760427389a0b438e9c8437fa7dfe32652a0e3485fb42fd3ba104dfa1",
+      "source_sha256": "31befe0b760427389a0b438e9c8437fa7dfe32652a0e3485fb42fd3ba104dfa1",
+      "input_sha256": "3b4b529c79ac0bc6180018ae31450dc9f4da48fcd1f22515d73ac495c1d37fc3",
+      "log_sha256": "def4e4df8d2a67eaa9f72236cbb43f8e2fc4e984545e0bc121aed16c9b0008a5",
+      "output_sha256": "e0fc83e74a3ce897ce20948dccde64efaac747726e53f520daa0302a1db28951",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/001-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\001-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.4561690092086792
+    },
+    {
+      "source_image_id": "e7a0eea2460d01a665f4e72418c827fbf5e167d8955f159a77f97490897821e2",
+      "source_sha256": "e7a0eea2460d01a665f4e72418c827fbf5e167d8955f159a77f97490897821e2",
+      "input_sha256": "c1c6886e7f100b688aa7d08dbbd8906ef8e6989f385e79da21cb5537fb6d46a2",
+      "log_sha256": "57802b75fd84d2bafd9cf0309869bd919a32e2060a5addad14cdbbbdc1dbe7df",
+      "output_sha256": "49c1bdfc359d4b6bb9ea841365a8f104dcaf9d3f2010b50fd44d1066b7cdd85c",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/002-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\002-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.8997840285301208
+    },
+    {
+      "source_image_id": "74bf23df92b90626e99c2c7c78f526c203ff0f1c0a1d6a6d785ae689a8c2d4a8",
+      "source_sha256": "74bf23df92b90626e99c2c7c78f526c203ff0f1c0a1d6a6d785ae689a8c2d4a8",
+      "input_sha256": "773359e1d13165462a530f61091cd00e049c928c1c7a5f6124d93cf4ce980832",
+      "log_sha256": "4ffa759329bb51d260bbcb932e933bae270a82c7d7483e798d7dca74e6941e9f",
+      "output_sha256": "0fd5c5f6d0701b0bfe748af21d84ab0c612d25c81ef2e8781ea0bdd2f68b7958",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/003-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\003-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.9065380096435547
+    },
+    {
+      "source_image_id": "58cf9edeae910864755fefddad1208bb15bf7661959baf0cd76bad89c58182e9",
+      "source_sha256": "58cf9edeae910864755fefddad1208bb15bf7661959baf0cd76bad89c58182e9",
+      "input_sha256": "2358c9681c91277df0ba937de34a214c0fc17a984851b6b99e597621eb7ea6df",
+      "log_sha256": "63b491641eda3281695df261fb816218bcd764af6a109f89f1d298360972ae17",
+      "output_sha256": "5a357fd90c8e187f63699f3425a06a10893cee1ddb7177cae61bddb4d520ad75",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/004-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\004-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 1.1377300024032593
+    },
+    {
+      "source_image_id": "d2cd64be26ae6995033e9959aa71984b342e5b75cc335267c669236984960b80",
+      "source_sha256": "d2cd64be26ae6995033e9959aa71984b342e5b75cc335267c669236984960b80",
+      "input_sha256": "bb91d1c28f93eb46b532a5e42e750c5ed1c0afb5725077ba5bc574ad26e20f94",
+      "log_sha256": "6e41163f5eaedfb8eda26d67ee3ac6414c2632edf011baa3a589630fee88ec57",
+      "output_sha256": "50b2277f48c18352c6b122f2f6e05b24eb0d5c0ffdfabf1fc89e59aafee47b12",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/005-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\005-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.9340100288391113
+    },
+    {
+      "source_image_id": "b49cc898143c46a8c3a8697411d04a078b36f60f4798ccc68aea33ea8fcac026",
+      "source_sha256": "b49cc898143c46a8c3a8697411d04a078b36f60f4798ccc68aea33ea8fcac026",
+      "input_sha256": "9b971d630be8e2964a00bc6c692120b3c40e4f417657adca6fe2fdead94f2faf",
+      "log_sha256": "fa23ac25e402120389a127801d0c70c93f7b2a5a8d877bae3a3b51adb303086e",
+      "output_sha256": "449b31c15ba43043b611c61c115d8239b964b0cea57d98b5d2e028eebc66de8e",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/006-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\006-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.665930986404419
+    },
+    {
+      "source_image_id": "5a6a3492bea33cd489817b5a1900f75d1d50f20eccb1076c6defe7b46b299f53",
+      "source_sha256": "5a6a3492bea33cd489817b5a1900f75d1d50f20eccb1076c6defe7b46b299f53",
+      "input_sha256": "efdbbe65ea4edbb1275291c188bb1bd1fee06fb6ed027ecebb27a8f8b8b8b9df",
+      "log_sha256": "010686e0da530a54769d2a505404814350547a004e69c11f8decda0128bfd495",
+      "output_sha256": "d81d6c7095186552c10fe2a8d853959ac45992f4cdfbb8c4c20f73195fffec85",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/007-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\007-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.5575969815254211
+    },
+    {
+      "source_image_id": "e01376acf91c157c7ad41463bf771b07e72990bcf30e59b431d5a7718c0b7549",
+      "source_sha256": "e01376acf91c157c7ad41463bf771b07e72990bcf30e59b431d5a7718c0b7549",
+      "input_sha256": "08bf1cfe0d4249e5437b9d918328ee336bde0f753607643e7f61a86c8af59f13",
+      "log_sha256": "e14e8c67a18880509295e543a4931c6ca6be810514f2167606afb7ae2becf1f5",
+      "output_sha256": "d148b5af20103f1e1e7e77c00751a3c1d98c49f26d06ddc96a55d603b09148c9",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/008-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\008-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 2.1055500507354736
+    },
+    {
+      "source_image_id": "4443ec9e57407e3710711790ecc73187a9cbff96c4f981c12ce77ea57a5683c0",
+      "source_sha256": "4443ec9e57407e3710711790ecc73187a9cbff96c4f981c12ce77ea57a5683c0",
+      "input_sha256": "278bd030964825d09684ad605b9824ed06eb984ef040aa294b7ff9d9364b2611",
+      "log_sha256": "23621ff784150325e82f1dda3f0295fde84e8e1494fbbc8e12bd7e7b53d7571d",
+      "output_sha256": "388af40e6c123b97f0302721520f92125205f4307a9ea71666dae859aacc0843",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/009-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\009-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.4583980143070221
+    },
+    {
+      "source_image_id": "306320367c7cb2e8b847bbd44d1c21ab33bc3c14f2b6a2181ec3be674f8b9692",
+      "source_sha256": "306320367c7cb2e8b847bbd44d1c21ab33bc3c14f2b6a2181ec3be674f8b9692",
+      "input_sha256": "4403e4b022d627a13ef6134a536d54a88f1a683d7337c9969784714076415f99",
+      "log_sha256": "36899cf382e999dea19b1e9f7ebdfde6c8949b663b230c5290f7235ea2c39df7",
+      "output_sha256": "b4d4764e262dbf19257dcb4cee769f18c91077e4ff769b8c2680034d2b91f886",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/010-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\010-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.911657989025116
+    },
+    {
+      "source_image_id": "9b6ad18663609b2fc428a948f56cd80718fdf6a267f1144e445e336dd0231a87",
+      "source_sha256": "9b6ad18663609b2fc428a948f56cd80718fdf6a267f1144e445e336dd0231a87",
+      "input_sha256": "2312e57c787aed10031ce560501ce77fde3c2574c793d5957a6f5d2ae924ab40",
+      "log_sha256": "59294ac88fcee647c697a8fb4feaa3c7e23c2c3707fffcf2a78808fc024fca24",
+      "output_sha256": "f848ca98d89fd60daabca1ac23ab562644a57c82e4136d8e996c721309a5bff3",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/011-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\011-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.4842680096626282
+    },
+    {
+      "source_image_id": "4717a9a1124e824e578093d97d23e0e6e32d05e4e6369f4e2325be1335dc0b10",
+      "source_sha256": "4717a9a1124e824e578093d97d23e0e6e32d05e4e6369f4e2325be1335dc0b10",
+      "input_sha256": "31b0de761362795b88d9dbec63231192d805f27628f26d851b402d470d877a1a",
+      "log_sha256": "ab4a29e2cca3d8c5dc0e180b3f9c401e396e0dff002c0569fc12ba8f93baf1da",
+      "output_sha256": "0ad446165e6e6cdcab79be8ca1e5b3211ae49fe45b57783e2e991237875ad8ac",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/012-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\012-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.5563049912452698
+    },
+    {
+      "source_image_id": "ac6b951ac6bee097b26faa2053f39b7b14f1fa84f08e4813108173695ed05576",
+      "source_sha256": "ac6b951ac6bee097b26faa2053f39b7b14f1fa84f08e4813108173695ed05576",
+      "input_sha256": "3606577eaed8f651cd55d5c5f62f638a13750756aad7bc8f5446fe8fdbefebac",
+      "log_sha256": "18f2f4b5cb4eac6353f259a603bc611fa6e052a5b916146be4b6346a62b8aa91",
+      "output_sha256": "3ea2fb42f8f6d586b2e935a62878ba46c80b5c803cd446c63f9a0fc78fdfb4f8",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/013-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\013-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 9.140970230102539
+    },
+    {
+      "source_image_id": "ab4ebad535f54e5ae341df9963cdfcd60055b1ad7654ec3d8a1391c6e4d2a824",
+      "source_sha256": "ab4ebad535f54e5ae341df9963cdfcd60055b1ad7654ec3d8a1391c6e4d2a824",
+      "input_sha256": "c89862ee0c933d5d788f5ca9f3b980fb03ac6bac961cabfa623a2373cbb9551d",
+      "log_sha256": "104b0e8c1162f9553fba10432fd58401100df97153e70684ef9a20e4d40022bd",
+      "output_sha256": "3345f225b958bfffe38faa0568c90623259be0deadb9d0f2d191d435a7905b6d",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/014-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\014-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 1.150920033454895
+    },
+    {
+      "source_image_id": "663dc37246c611dfd39e89d04fbe44eeb43bab8f247905b7dfa426667a4d4fab",
+      "source_sha256": "663dc37246c611dfd39e89d04fbe44eeb43bab8f247905b7dfa426667a4d4fab",
+      "input_sha256": "731da350cdaae31f4d713158979a72465f18bef1755f100f79f131a34f92a6b0",
+      "log_sha256": "9e20abcefd5e7a0bdd2b60c07cb1bf4e077577505b307fc636d5b649410b2ce4",
+      "output_sha256": "7f083bbb8405df62a7d58d2987d4709bec2aff95dfdeaa3c615340d36d7169eb",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/015-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\015-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.7831209897994995
+    },
+    {
+      "source_image_id": "3fc65b5a9fb842357ab67952cef7e6126e261c4cfd996fbc32df08ee20acfdb4",
+      "source_sha256": "3fc65b5a9fb842357ab67952cef7e6126e261c4cfd996fbc32df08ee20acfdb4",
+      "input_sha256": "423d45aefafc4302e4ccdf7e04a96f500b4207110712b284b9c0b624616441e2",
+      "log_sha256": "7d52771e2361bb1394e0ab7f2902c982dbb620de515ad00c003b79bc797bc8e4",
+      "output_sha256": "75d168b017b95076bbb1f2bd5e02385e2eb20dba6c1360a2e2da44182337b9af",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/016-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\016-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.898652970790863
+    },
+    {
+      "source_image_id": "65574db13d9e323aae2d40484d2d816e66979fb5e751ea79ed98de9056999143",
+      "source_sha256": "65574db13d9e323aae2d40484d2d816e66979fb5e751ea79ed98de9056999143",
+      "input_sha256": "ac24caa7f3cdb136aa7576541f1b33800a3e642b737d9c66def7a2210738f554",
+      "log_sha256": "a0e59ad7b9e575b84ed58f6508fb3adf63b155d654e646e596c8ba0cc1ef02ae",
+      "output_sha256": "3cc0df09970b61e3f61c0901011aeca88071676f9009d07b6ff78041d7e2877f",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/017-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\017-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.8206009864807129
+    },
+    {
+      "source_image_id": "3c2d052617a435253db45272c0a3105074258bbb84be767152842391ebcd428a",
+      "source_sha256": "3c2d052617a435253db45272c0a3105074258bbb84be767152842391ebcd428a",
+      "input_sha256": "a5d4deb93bb05c1698785ca8fadcf667319b276239718727102d715e9f8d6095",
+      "log_sha256": "820ea9641e2adbdb756d14997bfc7044136233063761fc127695518e297e84c1",
+      "output_sha256": "8f1ff2f44e0f3f0d9573965b3f1fd2e402dc69353754759d38eb6671bbb23eca",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/018-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\018-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.7915570139884949
+    },
+    {
+      "source_image_id": "e233238da538abf9657cfd1e95acee1ca80bf51c65f203930c1a9b05706bd048",
+      "source_sha256": "e233238da538abf9657cfd1e95acee1ca80bf51c65f203930c1a9b05706bd048",
+      "input_sha256": "84480e7ed42edf1c4f172c2015852f98e395ad4c056a31523367ecc992a69b61",
+      "log_sha256": "4d142503d4e8e6130197e0ef61ab1440138cd4bc414f2b8415ae3a284ad4f023",
+      "output_sha256": "6865afe39a6f012a74d86a7193d7fa4bf002f26e8ea0b373a8b7287dbb2b3456",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/019-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\019-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.849636971950531
+    },
+    {
+      "source_image_id": "9442be2174ff5cb0a3f67bdfc4aeb51d5401b22d296f314d65b6da71686dc27a",
+      "source_sha256": "9442be2174ff5cb0a3f67bdfc4aeb51d5401b22d296f314d65b6da71686dc27a",
+      "input_sha256": "73fc30d01d434db1badb6b70fc3591a05c3fa530bea6c71823d6becd619602f9",
+      "log_sha256": "7028a262dedfd9befd53ba79628ab9d2b0bddb285f76b8a4e3bc17f48933173f",
+      "output_sha256": "44a4e4a3cd5497b79245b903716a2cefc23805dc39c91619dd0b1ad0e8e6a7a6",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/020-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\020-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.7632899880409241
+    },
+    {
+      "source_image_id": "3b493da577abd35118bb60b913c4773d312ec27bb4694917b5710188a71f8048",
+      "source_sha256": "3b493da577abd35118bb60b913c4773d312ec27bb4694917b5710188a71f8048",
+      "input_sha256": "52cee5ac58df4531eb1b996465ef005d05b959d4754f632e36ad8e27fdf5fb4c",
+      "log_sha256": "93bc22ae2e42429fdcb9bb691cff6c297e36a4bd42d3260a5ba25de98e2e3a42",
+      "output_sha256": "59dfe81243452d5694f4887c2467802a242039410663720fc1aeb1881c0697dd",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/021-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\021-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.8558130264282227
+    },
+    {
+      "source_image_id": "c915621335f2a306db55f3206c2a25c1ff31f4b1c6415b9717a5d5da9ec9ca78",
+      "source_sha256": "c915621335f2a306db55f3206c2a25c1ff31f4b1c6415b9717a5d5da9ec9ca78",
+      "input_sha256": "4b580d7d9eceeefe6c6522b4e829ea1e67a22c9c9287be3d0c1f12bf44b0e0e7",
+      "log_sha256": "9a9150b235a6bffe25e3bb151328ce8b7b76ffde20437d7beb1033c4032f8ec4",
+      "output_sha256": "87e49858c99cc8d99ddbf21595c41a8fc879c902ab0b7f9812657edcbf4b5029",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/022-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\022-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.21730299293994904
+    },
+    {
+      "source_image_id": "fb910df812448b4afe02ed8319ca1f6a41551b2715117b67a8b20aca97de20e2",
+      "source_sha256": "fb910df812448b4afe02ed8319ca1f6a41551b2715117b67a8b20aca97de20e2",
+      "input_sha256": "1a83db6bbd7f8a99aed8c1a266f0e6d5b1d3b41d789fdb56fce6ce59c3a16170",
+      "log_sha256": "520acc3edb4ca63a0d907896678ef8db7b32a9077151dd0a88c25f31e1787a36",
+      "output_sha256": "0282ba115bd5e8e7a8890828410262d943da672fc890660dfedc2220e459b5d0",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/023-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\023-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.18674199283123016
+    },
+    {
+      "source_image_id": "8053b24c2fef17e040cb18f81eafaef33959991332df717783300905e525d97a",
+      "source_sha256": "8053b24c2fef17e040cb18f81eafaef33959991332df717783300905e525d97a",
+      "input_sha256": "a47fc2b8640cd08d8473302628f3aba15a1a4c84f60f08acce51b23d1833ae2e",
+      "log_sha256": "c401450cade8fbd98a111bbfcb645db2820140974dd59760b7f4b36f0ba73d5b",
+      "output_sha256": "85d104665d19b921598dfb35bbec7d3862c68b1f27022d2a142c66725957e619",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/024-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\024-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.1917410045862198
+    },
+    {
+      "source_image_id": "f77e35d23046cdcd10d647d4eeeff54be41faa94371e07f526d169ccf234bcb3",
+      "source_sha256": "f77e35d23046cdcd10d647d4eeeff54be41faa94371e07f526d169ccf234bcb3",
+      "input_sha256": "ad98e7112643b5a85159c28b6aeb7b0bcfaa6a482c9c06d874d495e3404a50ce",
+      "log_sha256": "52718ab8d3e48580402ce2a511cdc8aa29f720ab871a7bdd5e9b8ddef13bd4f8",
+      "output_sha256": "5c96a9cbc161aacfa6a5c6670727d3a9fe62433cf5fb05a7b7a987af2d890f29",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/025-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\025-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.17583400011062622
+    },
+    {
+      "source_image_id": "a8b48fd4b3415db0d580716d74719947ca45ac41c09799856b7f488954e6bdb8",
+      "source_sha256": "a8b48fd4b3415db0d580716d74719947ca45ac41c09799856b7f488954e6bdb8",
+      "input_sha256": "e7f0bea016024e9a1503b4d2f7e7231ac2a9e022717ed03bf63164955f153842",
+      "log_sha256": "d7ed73e673ef832c47c556556e8fe6cd75a53b30b4e96f488a3ba20d364d3eae",
+      "output_sha256": "076350733c72df5ea98b739aa107cabfe63d8c7621e5a47b3996ad0c2fc10f56",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/026-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\026-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.6500009894371033
+    },
+    {
+      "source_image_id": "f25c4a1b4a0a49dc29322badde1b88011067bcd8af89ed4c6563715528235f93",
+      "source_sha256": "f25c4a1b4a0a49dc29322badde1b88011067bcd8af89ed4c6563715528235f93",
+      "input_sha256": "f8d561dd08d838323b93c6df4c2fee8d6824040da37684c730a08c59fb967cfb",
+      "log_sha256": "bd781ba2ac98b321270087a144513a9658bd2fb7f4e1256a04ccb4ff094bf001",
+      "output_sha256": "047b4ca27495094ba03b259fc5cb3d88e36bda9cbcf7db23ccf41752037d28ac",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/027-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\027-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.15726199746131897
+    },
+    {
+      "source_image_id": "5ea04089ffa51059ddb13fea18ba94919f0e6211f3a57e68ee5d5021ca3567d0",
+      "source_sha256": "5ea04089ffa51059ddb13fea18ba94919f0e6211f3a57e68ee5d5021ca3567d0",
+      "input_sha256": "65a79a1a62e7c1f8ad6c4222d56aef561d71ab4a91a9f36adceec2f7bfcae998",
+      "log_sha256": "dbf3007f7426209eee0261fdc9ada3bf4dd11a5cf6f602b77fe752201c06de9a",
+      "output_sha256": "35970698bdcd4ab337067fa723e86528833e62bc2cb207b2eec381e7d2f68ab5",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/028-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\028-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.16697999835014343
+    },
+    {
+      "source_image_id": "6e8859b3ec5ebf7b119e3beeed11e9c49ebe30fb2f5a4bfaacbd59de51ca44ce",
+      "source_sha256": "6e8859b3ec5ebf7b119e3beeed11e9c49ebe30fb2f5a4bfaacbd59de51ca44ce",
+      "input_sha256": "de53b2e5cac3fb63cb85c7a66bab5fa2951be51a640e2c3aac3d52b410c74100",
+      "log_sha256": "03828d2da097ff9b8b340bca60099163330a6683f7caf6a829d664e5a74463a5",
+      "output_sha256": "c28981bb0f55628107103fc94d8e887c3f0d36c77c0322b71be04aae652f916d",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/029-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\029-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.5212510228157043
+    },
+    {
+      "source_image_id": "322e04476d3f7221ea358a56023d84fc9c911311c51364274624562aee11e053",
+      "source_sha256": "322e04476d3f7221ea358a56023d84fc9c911311c51364274624562aee11e053",
+      "input_sha256": "f85d712e183964b1549389aeffe7bbe42551d848945aad5f3e6d98f5f3048b43",
+      "log_sha256": "001ea8a91852b62bc8d6ac0d458325743eac800588071e11c02030f2615943fd",
+      "output_sha256": "4d82d5de5579dcea0a9d6cf4b2b53083232f138be0a632899affcf72b9193a89",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/030-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\030-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.5634459853172302
+    },
+    {
+      "source_image_id": "2c79c2d14dffb71bd83a4d9e6a175d5a1996043b8f315ef9073730741da3cf71",
+      "source_sha256": "2c79c2d14dffb71bd83a4d9e6a175d5a1996043b8f315ef9073730741da3cf71",
+      "input_sha256": "2cd1a03d82fec80b788663d3aea6313aa6ba1d333506141f3dea0337dff1a655",
+      "log_sha256": "4b95307dd2eb01afb44a33e1a645645c37705f621e10e73e6705e90714c57484",
+      "output_sha256": "699c15ccf343d0fe3b86f506c2a37220d7b522f15fa5b6600d1c1897ded8cab2",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/031-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\031-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.6508809924125671
+    },
+    {
+      "source_image_id": "af11f5a1ce2cc39e54cf25ec42eeaf45d9fcac91c181744efead9df70789cb7b",
+      "source_sha256": "af11f5a1ce2cc39e54cf25ec42eeaf45d9fcac91c181744efead9df70789cb7b",
+      "input_sha256": "f52d36be4d0113e950e3486084a9cc6a874022328aa4634ed96ae44e4c717540",
+      "log_sha256": "702743bc0c71f994a68aa925ec7361d7a207d83db091d742f4b95274d5ffefa2",
+      "output_sha256": "f43df85182eba8ec5afd684b3bc787d164dcc53d0213c30155c510c95132ce07",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/032-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\032-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.7337930202484131
+    },
+    {
+      "source_image_id": "d73e85aae5b2cd15c81b3c22c53c0b298a526accd6f5e4806b121ec54bbff7eb",
+      "source_sha256": "d73e85aae5b2cd15c81b3c22c53c0b298a526accd6f5e4806b121ec54bbff7eb",
+      "input_sha256": "6becbb894fd4035e88cd9b8877a01432c6d4c16efb23cdda891404cc76e71539",
+      "log_sha256": "2ac3553f2133f149807dd72ed6d2c0f330c3895c8f644c70517b1d09d6bdee32",
+      "output_sha256": "32d1e4490e71989719968997ece8653e57aac9e981cd1ea7fc9c784f9707bb04",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/033-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\033-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.49720999598503113
+    },
+    {
+      "source_image_id": "dc93797233be441cb2196aca9dddf3280d66fd90c66bef7b77983772819e40d1",
+      "source_sha256": "dc93797233be441cb2196aca9dddf3280d66fd90c66bef7b77983772819e40d1",
+      "input_sha256": "03f13965d0135fedb4407e58abeb04f080b9f92b0c58195e8de786a8ca1e334d",
+      "log_sha256": "4cc5362435107120104eaa7fccfbf3d0e173b13b234b9a6a565f348aa55caa78",
+      "output_sha256": "1af901484ad22d79fc0ca670833e942229e4fe181fa9e9b4a284a29dfed4a34d",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/034-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\034-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.7138599753379822
+    },
+    {
+      "source_image_id": "5ae53ead104443af7e403281e4ac36d27383a327dcd07114da0860dc1cd9e591",
+      "source_sha256": "5ae53ead104443af7e403281e4ac36d27383a327dcd07114da0860dc1cd9e591",
+      "input_sha256": "47c49ccdabc4b60f157870492fb22383ec5656c9baab6118eae3927e7268432e",
+      "log_sha256": "c07eac4ac26884e117c295d9c0e1e77efd0a4371c40e2328e917037d3e9b44bb",
+      "output_sha256": "a60cc7fdbeb6c87c70480afb76ef9d0738379ad0c223cf11003db78f5b60293a",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/035-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\035-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.46129199862480164
+    },
+    {
+      "source_image_id": "b95e9ca1fe88c757e5a41ff0cbe97f52c9935a8921744849fac0d2708842a94f",
+      "source_sha256": "b95e9ca1fe88c757e5a41ff0cbe97f52c9935a8921744849fac0d2708842a94f",
+      "input_sha256": "1e9e1310c5c8da56a38cfafe90627ba835b57f19f5dea1df541e449a15535400",
+      "log_sha256": "a8b3db72ccc7b7bfdbbd72f7476e716866600855586238a06fbdfc819b84fca7",
+      "output_sha256": "ab9ebebdc23712502cd006aabedd9928abd353bce71835a6d096dfccb7a09659",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/036-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\036-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.24507899582386017
+    },
+    {
+      "source_image_id": "f61b3c9743f71e90ac0a9532284c4cabea3a9512e09b0b744120e69c60a6f65d",
+      "source_sha256": "f61b3c9743f71e90ac0a9532284c4cabea3a9512e09b0b744120e69c60a6f65d",
+      "input_sha256": "8255706a750595a358d9148fca75b7541fd6970eccaab93ab6c9b246a4cfde60",
+      "log_sha256": "8c988ab8ad7146d1266d0a03d869648c46107cb1ad4316b61d4178c19895ef32",
+      "output_sha256": "a797c68b8c348a6ebdc497c1d612a27a52ad9c335a68568104b128a6386250f9",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/037-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\037-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.21754099428653717
+    },
+    {
+      "source_image_id": "5687ef973d78e670cb86dc4f5ed2ca5361e272930f27a50988bddd2cac66a1aa",
+      "source_sha256": "5687ef973d78e670cb86dc4f5ed2ca5361e272930f27a50988bddd2cac66a1aa",
+      "input_sha256": "9936456d759c5e2ef2d80597bcf6ee1784cc45234ab6f5c53394873a0cab47f2",
+      "log_sha256": "b631d5b1ecc5bffcdf38aafec9e588e7c54660a2f1b6a60ff991687f74af6fbf",
+      "output_sha256": "f43b1140d98965a2d79492219d7687900093bb584988e459bfb4b154b9b35605",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/038-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\038-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.24304400384426117
+    },
+    {
+      "source_image_id": "d5332d37a350175a4e833eb4797ea63e01d492ba60df3b95b21ca030dbdc2729",
+      "source_sha256": "d5332d37a350175a4e833eb4797ea63e01d492ba60df3b95b21ca030dbdc2729",
+      "input_sha256": "be470eb56cc37b653da5650c1e81aab3bad871641fca4247130d697700703018",
+      "log_sha256": "8b8809fa9effeaf9626cfde90950a20babb9e93b6e09e70f3e52a49e82f34af1",
+      "output_sha256": "e9423c43215ba087e6628437060093e50c9048f71a69518ae9101fd9ca95d64d",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/039-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\039-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.22337700426578522
+    },
+    {
+      "source_image_id": "6c69e056e2ffe41f60efe4fc077e96bdd3f3f3b9df1479e71abba1a65f0b5fe5",
+      "source_sha256": "6c69e056e2ffe41f60efe4fc077e96bdd3f3f3b9df1479e71abba1a65f0b5fe5",
+      "input_sha256": "7855afd43e0976d230987b5212f9a203b480d5a1e1cf26d594e8c7de60649b10",
+      "log_sha256": "75675313a7df38371fe9984a7aeeff0c07758df4396fb8a8fb575670de327d6e",
+      "output_sha256": "08d15fdf0e2d01febb23d2a0972897275398604e4b8746a7ff2b29d29b37df0b",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/040-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\040-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.20997799932956696
+    },
+    {
+      "source_image_id": "dd12dd38fec4a9b8e32994e4a9a54586deea1cb2e41390e74cff4bf58c1adfdd",
+      "source_sha256": "dd12dd38fec4a9b8e32994e4a9a54586deea1cb2e41390e74cff4bf58c1adfdd",
+      "input_sha256": "d6d29028cddedf715145b4ee52f7b3130cf9cd4a8f124f72b6b275b5ca7e61b0",
+      "log_sha256": "a26c2aa75e4bd66d48491a109668237dd69954dd638c08b4e8a26775d2ae087a",
+      "output_sha256": "608151fee4294ec2451ee1c6ea719c9a4cb1e6338a57281007e2e45a6badf9a5",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/041-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\041-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.21913300454616547
+    },
+    {
+      "source_image_id": "9887becf80cc3e42cba8cefe698f2384232bc80f301327f12a83686f942a29eb",
+      "source_sha256": "9887becf80cc3e42cba8cefe698f2384232bc80f301327f12a83686f942a29eb",
+      "input_sha256": "503165c2a7f0dcfea5222ae36f544159a2038d5e451ba81d2df2037d1d6782b2",
+      "log_sha256": "e6bd25ffad3a43e349b1f1f6345e544928b4ba8b6d6100a75508cdacddf9c220",
+      "output_sha256": "513d91b4d85d07019064acc1cc850a918cbbf6f011c2570094a7808d8599b40a",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/042-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\042-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.2375580072402954
+    },
+    {
+      "source_image_id": "a128b75f1d5ae82934083045af316743b401cfbd4de16c0763fe83d671d47ac5",
+      "source_sha256": "a128b75f1d5ae82934083045af316743b401cfbd4de16c0763fe83d671d47ac5",
+      "input_sha256": "b524d3f59a9a7fb5eca52a5f81b85b4c18a997bb02ce08601a0b6659de2ffdc9",
+      "log_sha256": "5dcd3d736d32835ff7443b9eb0b59e8bc359c3234fd7cdb24f27d485a854f66b",
+      "output_sha256": "2ef49ab783629e91398072c8216f279120335299d1bc1adbdff4c16e16e9e26b",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/043-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\043-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.2245350033044815
+    },
+    {
+      "source_image_id": "21be0a9873a90521d4a091fb57ca3cafac8885d75bb6d4636b763af590d3c26e",
+      "source_sha256": "21be0a9873a90521d4a091fb57ca3cafac8885d75bb6d4636b763af590d3c26e",
+      "input_sha256": "a8ea8260f8d15860e98c08f32fb1569407cb02f509829d09a2da6dfca4cddc73",
+      "log_sha256": "ff8a83718f87fe42b3947a6f60396be245e976621a6d027bffbd256945514355",
+      "output_sha256": "eb726dd80b6e1921b35935a9aa1817d41a2e225572a9274f5a278f9de650ef4b",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/044-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\044-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.2351820021867752
+    },
+    {
+      "source_image_id": "a2f5c74e879eec6e18912dc71f4aac342094fef174fd35878470b7066ab1c51c",
+      "source_sha256": "a2f5c74e879eec6e18912dc71f4aac342094fef174fd35878470b7066ab1c51c",
+      "input_sha256": "39cc14105aa6d5ed528bf923255b5ccae592ded4cee18b01b0b4803701932a9d",
+      "log_sha256": "ca98b99de4e6d77fda2b42c29cf81bf081953826aa88f7b7900aeffe09e9baa8",
+      "output_sha256": "f6ab96413530541516bcf62b77d869533755b4bf3fdb00df3d2af77e97a9038e",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/045-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\045-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.22384899854660034
+    },
+    {
+      "source_image_id": "d0a91afdd45df712337cf3681d76d7a9c6f0a949116f41ff67b77db639c21af1",
+      "source_sha256": "d0a91afdd45df712337cf3681d76d7a9c6f0a949116f41ff67b77db639c21af1",
+      "input_sha256": "79474260ef6da27008fe9027b0d290d6098151988b05921162a180f8fddb0bb4",
+      "log_sha256": "8f41de486f39ce598eb1879f98039a083377c5336e78ca42bb3faff5666147ea",
+      "output_sha256": "bd01d390ca3fda0ae2d7ae16611f851c3eee37e55f2c1e289577fa25cc70519e",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/046-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\046-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.2479020059108734
+    },
+    {
+      "source_image_id": "08138f7ae17f1bfba898e8d4b4e5bdf2908cf6998fa914af91413cb5b206cd0c",
+      "source_sha256": "08138f7ae17f1bfba898e8d4b4e5bdf2908cf6998fa914af91413cb5b206cd0c",
+      "input_sha256": "8487e5a688dd3045289f3c1ebb00fcd9996b0794ef96391dac42d4ee93cd29a8",
+      "log_sha256": "e14898e081ab79c3f2c2a34f12af5a41e0465c305c21d90c497538f3b8284ff5",
+      "output_sha256": "7ed7483b4016595d6a3d4d364ad9aa7eee3e21f84298d97a77326b0f6de9f493",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/047-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\047-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.8495240211486816
+    },
+    {
+      "source_image_id": "9d4d906a3ee80b28f3e09a2fc3f73df9102ec4e80e2c6d115362e2cdc900f0f1",
+      "source_sha256": "9d4d906a3ee80b28f3e09a2fc3f73df9102ec4e80e2c6d115362e2cdc900f0f1",
+      "input_sha256": "7d71eb5aff4f7cf8d6f474061344179a8d88720b3e9ac3d09d6a72d72267f900",
+      "log_sha256": "a197902a754808656838e29d9286297178f8aa9a034710e9a855a3370a7ccc26",
+      "output_sha256": "c22454499d3f1b545df0cb8ca57e8bd85ccfd7f29c45f5ed269fd306f7aa3da7",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/048-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\048-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.2456829994916916
+    },
+    {
+      "source_image_id": "3ea96ea6afe84ff9ff551bf0a267e11a4a208ac6559957c4971f2be74b61ea91",
+      "source_sha256": "3ea96ea6afe84ff9ff551bf0a267e11a4a208ac6559957c4971f2be74b61ea91",
+      "input_sha256": "8058a12242f29f8e13385da1ed0203602dbcaf28b7c49e3d568b53bc3ccdb2b4",
+      "log_sha256": "36a07ded17adaea210dc4bd88f1b0e929ad820dc0484f4089381f0bb6d63b472",
+      "output_sha256": "29881bce275ddfbbaa27bd15921dfee96343cb614701d9e0cca9de4550b922e8",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/049-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\049-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.2341729998588562
+    },
+    {
+      "source_image_id": "92228c32ab4e3a52838314ab6c67300a10f6306370fc1f5000f4f27ff682e231",
+      "source_sha256": "92228c32ab4e3a52838314ab6c67300a10f6306370fc1f5000f4f27ff682e231",
+      "input_sha256": "5d2a4b960fd93ca1fe3e1a2794ee21d4e7c66f154f357851429ec010d6d07219",
+      "log_sha256": "2b4178e7cbe8064cd17be057822fa052272ab411e7ce3a537a484bd2f7cc15ed",
+      "output_sha256": "4a5661a5b1935a3614448d06604158f005522d49a0d299f4f39a7a676d3e2de5",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/050-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\050-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.23779700696468353
+    },
+    {
+      "source_image_id": "5cf5af99f8600cead0b02f4bff69e35ccd63e07d02b8f98d906382024c3a32c4",
+      "source_sha256": "5cf5af99f8600cead0b02f4bff69e35ccd63e07d02b8f98d906382024c3a32c4",
+      "input_sha256": "3793eab0417c69049f300ce00ec3c92c04144a5e40fa8eb04106a51b6e59ab1e",
+      "log_sha256": "ab51dec7f56fede7477f953226c2e635f5c6c1db9064997935bd62d31ee388fd",
+      "output_sha256": "f7881443973542f2176b5f94c16d1cd441cc5263371b0cb3207a40ec1383e87c",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/051-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\051-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.25282999873161316
+    },
+    {
+      "source_image_id": "0c964fdf4eb572cab3c09a08737a5d2b360c2f53787afecb7e467c464f4c5815",
+      "source_sha256": "0c964fdf4eb572cab3c09a08737a5d2b360c2f53787afecb7e467c464f4c5815",
+      "input_sha256": "4940d765f8d524a7e27214fc4768fe7b0d306325d8e6255209cadc448634454a",
+      "log_sha256": "3f46e56e06c6840f66616c37deff2adde3da80686386dd26ab411e42d9501478",
+      "output_sha256": "573f86df71881b94b4315c6d39e32f8e60fec7c8d7d99423b9fe4dd6176793b4",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/052-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\052-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.18956999480724335
+    },
+    {
+      "source_image_id": "842c377ebb2f7865a7a155e75ca5eac23f74b0adfcc1c69d69d8dccbc0cdf206",
+      "source_sha256": "842c377ebb2f7865a7a155e75ca5eac23f74b0adfcc1c69d69d8dccbc0cdf206",
+      "input_sha256": "36c76f63abcd4cfeedc479fa11bb9c6c7be4a1046019505490fafe26a8b2fc36",
+      "log_sha256": "0df34591e18325f6f72c0eaa1be80442538f60bfcc79ef248a80c5771fc796fe",
+      "output_sha256": "c2b1343ff4c5eb5ef0e01767ba2bf384aecf22d6b011adca311dc1304801d13d",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/053-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\053-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.21121999621391296
+    },
+    {
+      "source_image_id": "c0dc84aa278a179c52bfbc165dd30b9cee88b963ab6aba4bb0bad56cab8950e5",
+      "source_sha256": "c0dc84aa278a179c52bfbc165dd30b9cee88b963ab6aba4bb0bad56cab8950e5",
+      "input_sha256": "b61a13660124b91d77d7b43a08bb5ae15ae200301452c282b4a44cfabbbd5c60",
+      "log_sha256": "e0ad33a0f6ad6cdb1070b522065e9855c0b9832cdbb67fbd8eeddb2e9bec17c2",
+      "output_sha256": "413e69985f3e870ec4563dc75bd90519878604f8507f3f2452a72ebafd964bc1",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/054-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\054-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.22029900550842285
+    },
+    {
+      "source_image_id": "59827b4d81e74449244811189f73fda9d4f7064ea0e6db4c55f54f18e033b6fc",
+      "source_sha256": "59827b4d81e74449244811189f73fda9d4f7064ea0e6db4c55f54f18e033b6fc",
+      "input_sha256": "f192c674887a7595072b29215e57e9234f94a9965421b823613fca3466833e19",
+      "log_sha256": "bd1922a08adff6b851e94cc47a5f82445293bb49ee41d3b9588fa730dc64e942",
+      "output_sha256": "e2b50f66010c14acf41ba9d2398342e91c53e7a4baab8fbf5ff14c29d96245df",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/055-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\055-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.21292699873447418
+    },
+    {
+      "source_image_id": "4097238eae9b165ea18a39e2144a4a12075d2dad33bfd162cdd8adfa161f1dde",
+      "source_sha256": "4097238eae9b165ea18a39e2144a4a12075d2dad33bfd162cdd8adfa161f1dde",
+      "input_sha256": "5b3688a08d51707b08ba21e439c341d3da6f6d40dd8bc5a7e6486b7ca712e63f",
+      "log_sha256": "0821547b67a54e653239d00365723a802765c7543217111ac299276f24e429e4",
+      "output_sha256": "aae9ca6e4cb1c71257f83165558a7da94427745ff70f913f76583665b218b955",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/056-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\056-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.22307099401950836
+    },
+    {
+      "source_image_id": "e67089511c4507984afe50f97745ffd7ec441deb89c6894319cde1d002caeaab",
+      "source_sha256": "e67089511c4507984afe50f97745ffd7ec441deb89c6894319cde1d002caeaab",
+      "input_sha256": "e816f2581db739686e5df73b455b4e8aa540691c3c72e5a6b9ce4fecfadc7f85",
+      "log_sha256": "698654f9453855864b1c53eb6adb5325b9a49b8d396f06887f761f8b757d337a",
+      "output_sha256": "76eedf5cfcd063db0ae8d014d534058027c8392e36d3640d4d189d10999bcb43",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/057-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\057-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.23986999690532684
+    },
+    {
+      "source_image_id": "3cc01372514545d89e7299855822391f7fc3053d5ca0ab91ba223814df52a73d",
+      "source_sha256": "3cc01372514545d89e7299855822391f7fc3053d5ca0ab91ba223814df52a73d",
+      "input_sha256": "d2c885bd34f419dbf5a50021ab24b31aa2eea2f756bf5931b5a54884a36bb198",
+      "log_sha256": "3940e244d27ea849a3261912fa5de43a8a17610f87935cd6366999ccb9d29bc4",
+      "output_sha256": "690f77580ae6d01f2b2505083916f00fdc00919bc9a276725d2ecc53d8f65668",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/058-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\058-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.243025004863739
+    },
+    {
+      "source_image_id": "ee6a930e51c3effd285009f8f46e2e2413fd471950840e29aa9921527ac2676b",
+      "source_sha256": "ee6a930e51c3effd285009f8f46e2e2413fd471950840e29aa9921527ac2676b",
+      "input_sha256": "8117687484d7e5b3c416efb085b773885325398f11b76121447418cbcd0a49f0",
+      "log_sha256": "6ca1e9ccdd30ef30697891ee5c9c3ad57611792a65759814400d50616cd6e76d",
+      "output_sha256": "5611261c468cfe90ff0107f6da5d2ff662e29d215c654544a863e07b79d0ba62",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/059-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\059-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.23159199953079224
+    },
+    {
+      "source_image_id": "c7ae60d022b47c8abb966b3761c614678e666cb75699d68458f9fddf3ef19165",
+      "source_sha256": "c7ae60d022b47c8abb966b3761c614678e666cb75699d68458f9fddf3ef19165",
+      "input_sha256": "4f2d9ed77f5e607cc9db75692d9c96a205e0baa9bf7bd24d0c4844a02fbfa2bf",
+      "log_sha256": "4af436a50275dd6e64ce2dad59be406c3a7697f68ae878822b06020be7747964",
+      "output_sha256": "21f5b33d66bd8284404c61bdc91d0955523f7b63cb6137464d01410c79549d18",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/060-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\060-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.21550799906253815
+    },
+    {
+      "source_image_id": "6bc8818c66880cede72eef376756604bd2f36d0cc25efdea86e90ce67d0643b3",
+      "source_sha256": "6bc8818c66880cede72eef376756604bd2f36d0cc25efdea86e90ce67d0643b3",
+      "input_sha256": "f6a3b4657ad1a20050939db738f930eee7bba403e351b06810f198827ea3172a",
+      "log_sha256": "d317887e27ebf2ee6342d192d9126cdd6c3301a9d5a9e930c137a0d5a4fc318a",
+      "output_sha256": "82269fb24e36eed6126029d2402fdad9b1437d33d1204f39a858a90183f9abb1",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/061-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\061-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.27477800846099854
+    },
+    {
+      "source_image_id": "8aea2c2606e7a8b6803aaec3b1c46155e02d9f024dc7f96c5a70345e07ddd468",
+      "source_sha256": "8aea2c2606e7a8b6803aaec3b1c46155e02d9f024dc7f96c5a70345e07ddd468",
+      "input_sha256": "998ae03fac3dbf06de7c95711cf45acd4808786ad5b39bd532b4eee723fc684b",
+      "log_sha256": "a5e1c7b2caf8bac25aa9dd83a36ea56628537ea2c0d48a1a6e5ae5a9e7af317d",
+      "output_sha256": "25f1582f420754b4ec97c6f575921346172298ce812c628de03cebc9d465408b",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/062-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\062-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.22618000209331512
+    },
+    {
+      "source_image_id": "64be07ae0beef134e85ef409b8325b257877779f3b559e73ca31652f9716bcd3",
+      "source_sha256": "64be07ae0beef134e85ef409b8325b257877779f3b559e73ca31652f9716bcd3",
+      "input_sha256": "a7ec2b1a319ece37fe792961d3cf27cc944d5e1c6a61e5c0963ee0c817768afa",
+      "log_sha256": "661500f31db5e075af90ddc5c4e9fd8f57466b450dae2623f2f08bd8e568db5c",
+      "output_sha256": "afd834db39fe23e2c26cba09579c49823a37fe38a7adf25d631e70c23f7e13b8",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/063-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\063-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.25954100489616394
+    },
+    {
+      "source_image_id": "d5bfa5856ca08545c13fa01c87b36d64d6ebb386b0457842a6664a8575ac0d6c",
+      "source_sha256": "d5bfa5856ca08545c13fa01c87b36d64d6ebb386b0457842a6664a8575ac0d6c",
+      "input_sha256": "438e191cda74b1eddf38e95290e5ef7a055a82249c3215c1253d7b2c3007bc19",
+      "log_sha256": "7cab56c3ca491463490f3e1aedb83a1ce2cabee9ddc33104affc83bbb4258704",
+      "output_sha256": "147b8eb3c5b5463a3ca3e090edba2eafa6ed94ead23ce573f74718fa6eb11e28",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/064-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\064-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.2525100111961365
+    },
+    {
+      "source_image_id": "d32e0c858778dff5112179e4810a893dcb0346ec58257f7ee65ec18b5f6ca3a4",
+      "source_sha256": "d32e0c858778dff5112179e4810a893dcb0346ec58257f7ee65ec18b5f6ca3a4",
+      "input_sha256": "de3427d23adfecee55ca40f65bdbba4d0079894f6e8252b82f2be34ccd4c62af",
+      "log_sha256": "ea6991cd30a76cf89136075e5858b730a035cf005ce2fd3933dc0f3b90ae663a",
+      "output_sha256": "360b5ba81d7b6381bafe14b1356fd5b639c10025badafd19581ba71e0973a1d8",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/065-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\065-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.25106000900268555
+    },
+    {
+      "source_image_id": "883a61f417b4b955011ff6cb4d6508e5dfa0e2e89a647e6056e00a51d4b34406",
+      "source_sha256": "883a61f417b4b955011ff6cb4d6508e5dfa0e2e89a647e6056e00a51d4b34406",
+      "input_sha256": "bbb51fd6c06b44d73df2f2737d6140db42caf67bfe1e7426e71f86ba468c7631",
+      "log_sha256": "53191e48cf28608404afb05f241b377117f9cddb478b54804e511b5ded401193",
+      "output_sha256": "bb80b5ef98f51199c93e40c3507c2df6a8ef1d6fe18ad61f12966e910286e6c8",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/066-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\066-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.21028000116348267
+    },
+    {
+      "source_image_id": "3f1c71967e8456b052bd71f40e1ab8a81a053100688113c911d0dedbc47f594e",
+      "source_sha256": "3f1c71967e8456b052bd71f40e1ab8a81a053100688113c911d0dedbc47f594e",
+      "input_sha256": "10c4666348d9f42b87232fab9fe594304928c262ae7f5e68ca95d911840762c3",
+      "log_sha256": "5398055b59c654b148e054faf9ec131d061000c57b2bfb7f1ef4bb7bba1745fd",
+      "output_sha256": "7aa5a4bbee12dff456479cddf04e1838afe0e3d04e02be33463f02c92909dccf",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/067-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\067-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.2647239863872528
+    },
+    {
+      "source_image_id": "22efa66a6c17a79924e488f5c5db0cba3f444216c3b589b380fbc6a46c8a58eb",
+      "source_sha256": "22efa66a6c17a79924e488f5c5db0cba3f444216c3b589b380fbc6a46c8a58eb",
+      "input_sha256": "8a88511f787e13512a88505b83330bc250e58304c9893cfd5d23da86d0015cd5",
+      "log_sha256": "83abfdde794974d21bd92bad353df93e461ed302615130aa1d2439b136ab3028",
+      "output_sha256": "9652693e471d7943e3238a01f39e40c38889ec9107627471cb7340abb1c9e5f1",
+      "exit_code": 0,
+      "command": [
+        "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\TensorRT-10.9.0.34\\bin\\trtexec.exe",
+        "--loadEngine=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\model.engine",
+        "--loadInputs=image:runs/trt-detailed-int8_selective_2_trt_compat/validation/068-input.bin",
+        "--iterations=1",
+        "--warmUp=0",
+        "--duration=0",
+        "--avgRuns=1",
+        "--exportOutput=D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-detailed-int8_selective_2_trt_compat\\validation\\068-output.json"
+      ],
+      "status": "SUCCESS",
+      "score": 0.22622300684452057
+    }
+  ],
+  "status": "measured"
+}

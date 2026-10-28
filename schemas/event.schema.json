@@ -1,0 +1,12 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object",
+  "required":["schema_version","session_id","frame_id","source_image_id","scheduled_monotonic_ns","arrival_time_utc","decision","status","score","image_threshold","pixel_threshold","decision_latency_ms","model_gpu_ms","pipeline_ms","model_sha256","requested_backend","observed_provider_summary","declared_precision","verified_precision_evidence_id","anomaly_map_path","artifact_error","artifact_latency_ms"],
+  "properties":{
+    "schema_version":{"const":1},"session_id":{"type":"string"},"frame_id":{"type":"integer","minimum":1},"source_image_id":{"type":"string"},"scheduled_monotonic_ns":{"type":"integer"},"arrival_time_utc":{"type":"string","format":"date-time"},
+    "decision":{"enum":["OK","REVIEW"]},"status":{"enum":["SUCCESS","INVALID_IMAGE","INVALID_OUTPUT","INFERENCE_ERROR","TIMEOUT","QUEUE_OVERFLOW","UNCALIBRATED"]},
+    "score":{"type":["number","null"]},"image_threshold":{"type":["number","null"]},"pixel_threshold":{"type":["number","null"]},"decision_latency_ms":{"type":"number","minimum":0},
+    "pipeline_ms":{"type":["number","null"],"minimum":0},"model_gpu_ms":{"type":["number","null"],"minimum":0},"artifact_latency_ms":{"type":["number","null"],"minimum":0},
+    "model_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},"requested_backend":{"type":"string"},"observed_provider_summary":{"type":["string","object"]},"declared_precision":{"type":"string"},"verified_precision_evidence_id":{"type":["string","null"]},"anomaly_map_path":{"type":["string","null"]},"artifact_error":{"type":["string","null"]}
+  },
+  "allOf":[{"if":{"properties":{"status":{"not":{"const":"SUCCESS"}}}},"then":{"properties":{"decision":{"const":"REVIEW"}}}},{"if":{"properties":{"decision":{"const":"OK"}}},"then":{"properties":{"score":{"type":"number"},"image_threshold":{"type":"number"},"status":{"const":"SUCCESS"}}}}]
+}

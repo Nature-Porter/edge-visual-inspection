@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "run": "runs/trt-cpp-validation",
+  "events_sha256": "22b6bf9efdf525d50538024d38387536182652ac646d310ea9460791fae14e65",
+  "summary_sha256": "7a2381ce2694ade54a40c75a84955d2fa6ff074760b2c4f15dc347c6095b9834",
+  "cpu_post_events_sha256": "4f26252f67747a389ebdae388e0feae29ceb1ab905dbeccd3ff8445a76066e9a",
+  "cpu_post_schema_audit_sha256": "9ac0b2655c4a033e1165e74aff85fa23de95b1952a648e68952b9f44ef09253c",
+  "schema_audit_sha256": "6b07416678a5d19428ec7e8ac74b5b8f30f9fd203907feb8b99af5dfeec2ae86",
+  "engine_sha256": "0c03603cdeace5b091fd180071e739b05a52a3d80ca1b35e2bb213cf735f8763",
+  "model_sha256": "c82c6dccc5d9d3155d0e836d6b0688937852c222d042b488ef9bd5797c9bb3f4",
+  "evidence_sha256": "2e27eb5e28000a9ec0ca0d0a296efabc6f7f456821c6697a7ba072c715bf7df0",
+  "validation_sha256": "650fecb79f57619cf23172f64cb61687a224c66c4d8f6c980a5a3fa14939bc1f",
+  "coverage": {
+    "expected": 69,
+    "received": 69,
+    "valid": 69,
+    "ERROR": 0,
+    "coverage": 1.0,
+    "error_ids": []
+  },
+  "metrics": {
+    "n": 69,
+    "TP": 29,
+    "FP": 2,
+    "TN": 38,
+    "FN": 0,
+    "FNR": 0.0,
+    "FPR": 0.05,
+    "AUROC": 0.9775862068965517,
+    "AP": 0.9607555572390529,
+    "AP_definition": "sklearn non-interpolated average precision",
+    "undefined_reason": null,
+    "image_threshold": 0.4560212194919586
+  },
+  "quality_gate_pass": true,
+  "max_score_abs_vs_direct_trt": 3.337860107421875e-06,
+  "decision_agreement": 69,
+  "final_test_used": false,
+  "errors": []
+}

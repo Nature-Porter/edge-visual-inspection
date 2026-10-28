@@ -1,0 +1,26 @@
+[
+  {
+    "candidate": "fp16",
+    "status": "generated"
+  },
+  {
+    "candidate": "int8_minmax",
+    "status": "generated"
+  },
+  {
+    "candidate": "int8_percentile",
+    "status": "generated"
+  },
+  {
+    "candidate": "int8_selective_1",
+    "status": "generated"
+  },
+  {
+    "candidate": "int8_selective_2",
+    "status": "generated"
+  },
+  {
+    "candidate": "int8_selective_3",
+    "status": "generated"
+  }
+]

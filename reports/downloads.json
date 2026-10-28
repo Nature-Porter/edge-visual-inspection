@@ -1,0 +1,23 @@
+[
+  {
+    "name": "metal_nut.tar.xz",
+    "source": "https://www.mydrive.ch/shares/150459/c68856a21dca589b0f8ff6d4ee0f18f4/download/420937637-1629959294/metal_nut.tar.xz",
+    "sha256": "86e3c8e163ceb19146ad3ddc408e85cc34ae02e0da430e07a73bac6bbb48532a",
+    "expected_sha256": null,
+    "status": "passed"
+  },
+  {
+    "name": "imagenette2.tgz",
+    "source": "https://s3.amazonaws.com/fast-ai-imageclas/imagenette2.tgz",
+    "status": "blocked",
+    "reason": "official SHA256 mismatch",
+    "target": "D:\\Pythonproject\\C++\\edge-visual-inspection\\data\\raw\\imagenette2.tgz"
+  },
+  {
+    "name": "efficientad_pretrained_weights.zip",
+    "source": "https://github.com/open-edge-platform/anomalib/releases/download/efficientad_pretrained_weights/efficientad_pretrained_weights.zip",
+    "sha256": "c09aeaa2b33f244b3261a5efdaeae8f8284a949470a4c5a526c61275fe62684a",
+    "expected_sha256": "c09aeaa2b33f244b3261a5efdaeae8f8284a949470a4c5a526c61275fe62684a",
+    "status": "passed"
+  }
+]

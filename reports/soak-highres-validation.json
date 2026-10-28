@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "run": "runs/soak-highres",
+  "event_count": 36001,
+  "statuses": {
+    "SUCCESS": 36000,
+    "TIMEOUT": 1
+  },
+  "decisions": {
+    "REVIEW": 16182,
+    "OK": 19819
+  },
+  "events_sha256": "83c39a4226fc7da7b8f10cd365594777442a5763eeabd6676e0132652fd7d1b2",
+  "summary_sha256": "bc1b955360e49eda55ade181b2998e8ed1853b25e87c5835c838f265186f33b2",
+  "schema_sha256": "b9dabd80f15d0423c9429a4966d081a7b0fedff49b9b6da0beb4976e45d6750e",
+  "errors": []
+}

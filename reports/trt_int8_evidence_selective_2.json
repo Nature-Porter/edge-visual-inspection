@@ -1,0 +1,7 @@
+{
+  "run_dir": "D:\\Pythonproject\\C++\\edge-visual-inspection\\runs\\trt-int8-int8_selective_2-1790765652524388500",
+  "evidence_sha256": "b2357e33ffd3b6694e6ab09645759856ec70cfb8c0dbed2dc9cfd90cb4905431",
+  "status": "blocked",
+  "int8_execution_verified": false,
+  "reason": "cached TRT engine inspector exposes layer names only; precision metadata unavailable"
+}

@@ -1,0 +1,1 @@
+{"version":3,"configurePresets":[{"name":"windows-release","generator":"Ninja","binaryDir":"${sourceDir}/build","cacheVariables":{"CMAKE_BUILD_TYPE":"Release","INSPECTION_CUDA":"ON"}}],"buildPresets":[{"name":"windows-release","configurePreset":"windows-release"}],"testPresets":[{"name":"windows-release","configurePreset":"windows-release","output":{"outputOnFailure":true}}]}

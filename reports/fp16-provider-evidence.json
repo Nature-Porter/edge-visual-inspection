@@ -1,0 +1,75 @@
+{
+  "profile_sha256": "5c7ec20993ff0148ef3b2649963ceb1f2b035fc0e0fb4d03a68108fa440f9391",
+  "model_sha256": "d957a232a1e83acfcbb27b2ad2da25d371a146d1a1b5c52a65e5a01844bb32d7",
+  "provider_operator_events": [
+    {
+      "provider": "CUDAExecutionProvider",
+      "operator": "Add",
+      "events": 3
+    },
+    {
+      "provider": "CUDAExecutionProvider",
+      "operator": "AveragePool",
+      "events": 12
+    },
+    {
+      "provider": "CUDAExecutionProvider",
+      "operator": "Cast",
+      "events": 60
+    },
+    {
+      "provider": "CUDAExecutionProvider",
+      "operator": "Conv",
+      "events": 66
+    },
+    {
+      "provider": "CUDAExecutionProvider",
+      "operator": "Div",
+      "events": 12
+    },
+    {
+      "provider": "CUDAExecutionProvider",
+      "operator": "Mul",
+      "events": 12
+    },
+    {
+      "provider": "CUDAExecutionProvider",
+      "operator": "Pad",
+      "events": 6
+    },
+    {
+      "provider": "CUDAExecutionProvider",
+      "operator": "Pow",
+      "events": 6
+    },
+    {
+      "provider": "CUDAExecutionProvider",
+      "operator": "ReduceMean",
+      "events": 6
+    },
+    {
+      "provider": "CUDAExecutionProvider",
+      "operator": "Relu",
+      "events": 54
+    },
+    {
+      "provider": "CUDAExecutionProvider",
+      "operator": "Resize",
+      "events": 27
+    },
+    {
+      "provider": "CUDAExecutionProvider",
+      "operator": "Split",
+      "events": 3
+    },
+    {
+      "provider": "CUDAExecutionProvider",
+      "operator": "Sub",
+      "events": 18
+    }
+  ],
+  "cpu_heavy_fallback": [],
+  "cpu_other_nodes": [],
+  "int8_execution_verified": false,
+  "precision_note": "ORT provider trace proves provider assignment only; TensorRT layer inspector evidence required for precision."
+}

@@ -1,0 +1,12 @@
+# Tools for fixtures, data preparation, evaluation, schemas and CMake builds.
+# Model training additionally requires the packages in offline.txt.
+numpy==2.2.6
+opencv-python==4.11.0.86
+onnx==1.18.0
+onnxruntime-gpu==1.22.0
+onnxconverter-common==1.16.0
+PyYAML==6.0.2
+jsonschema==4.23.0
+pytest==8.3.5
+cmake==3.31.6
+ninja==1.11.1.4

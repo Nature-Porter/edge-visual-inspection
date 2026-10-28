@@ -1,0 +1,17 @@
+﻿[
+    {
+        "path":  "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\opencv\\build\\x64\\vc16\\lib\\OpenCVConfig.cmake",
+        "bytes":  15284,
+        "sha256":  "8327897429690E0C0988165C3EF7A4760B7D3E6DF95AC56F223B8BFA74C51D0E"
+    },
+    {
+        "path":  "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\opencv\\build\\x64\\vc16\\lib\\opencv_world4110.lib",
+        "bytes":  3717756,
+        "sha256":  "C7D622F03FB43671369A8442483206B13D4FB6A25D66CC7B14DEBDFC067273D2"
+    },
+    {
+        "path":  "D:\\Pythonproject\\C++\\edge-visual-inspection\\third_party\\opencv\\build\\x64\\vc16\\bin\\opencv_world4110.dll",
+        "bytes":  64825856,
+        "sha256":  "3605A427658597D55310DE4EF5BF1AC92FF28DF23E01344571FD287D4F1E6DAB"
+    }
+]
